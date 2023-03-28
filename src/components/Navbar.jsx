@@ -1,6 +1,7 @@
 import React ,{useState}from "react";
 import Case from "./Case";
 import NavLink from "./NavLink";
+
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
@@ -23,13 +24,13 @@ export default function Navbar() {
         // </div>
 
          
-<nav className="w-full bg-blue-600 shadow w-screen " >
+<nav className="w-full bg-primary shadow w-screen " >
 
-            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8  shadow bg-red-600">
+            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8  shadow ">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="/">
-                            <h2 className="text-2xl font-bold  hover:text-white">LOGO</h2>
+                            <h2 className="text-2xl font-bold text-textPrimary  hover:text-white">LOGO</h2>
                         </a>
                         <div className="md:hidden">
                             <button
