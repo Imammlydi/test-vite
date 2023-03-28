@@ -23,11 +23,12 @@ export default function Navbar() {
         // </div>
 
         
-<nav className="w-full bg-white shadow w-screen">
+<nav className="w-full bg-blue-600 shadow w-screen">
+<Case>
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                        <a href="javascript:void(0)">
+                        <a href="/">
                             <h2 className="text-2xl font-bold">LOGO</h2>
                         </a>
                         <div className="md:hidden">
@@ -76,21 +77,20 @@ export default function Navbar() {
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <li className="text-gray-600 hover:text-blue-600">
-                                <a href="javascript:void(0)">Home</a>
+                                <NavLink href="/">Home</NavLink>
                             </li>
                             <li className="text-gray-600 hover:text-blue-600">
-                                <a href="javascript:void(0)">Blog</a>
+                                 <NavLink href="/about">About</NavLink>
                             </li>
                             <li className="text-gray-600 hover:text-blue-600">
-                                <a href="javascript:void(0)">About US</a>
+                                <NavLink href="/gallery">Gallery</NavLink>
                             </li>
-                            <li className="text-gray-600 hover:text-blue-600">
-                                <a href="javascript:void(0)">Contact US</a>
-                            </li>
+                           
                         </ul>
                     </div>
                 </div>
             </div>
+            </Case>
         </nav>
     );
 }
