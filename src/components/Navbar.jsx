@@ -25,11 +25,11 @@ export default function Navbar() {
          
 <nav className="w-full bg-blue-600 shadow w-screen " >
 
-            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8  shadow">
+            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8  shadow bg-red-600">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="/">
-                            <h2 className="text-2xl font-bold pl-4 ">LOGO</h2>
+                            <h2 className="text-2xl font-bold  hover:text-white">LOGO</h2>
                         </a>
                         <div className="md:hidden">
                             <button
