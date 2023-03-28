@@ -22,14 +22,14 @@ export default function Navbar() {
         //     </Case>
         // </div>
 
-        
-<nav className="w-full bg-blue-600 shadow w-screen">
-<Case>
-            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+         
+<nav className="w-full bg-blue-600 shadow w-screen " >
+
+            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8  shadow">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="/">
-                            <h2 className="text-2xl font-bold">LOGO</h2>
+                            <h2 className="text-2xl font-bold pl-4 ">LOGO</h2>
                         </a>
                         <div className="md:hidden">
                             <button
@@ -85,12 +85,15 @@ export default function Navbar() {
                             <li className="text-gray-600 hover:text-blue-600">
                                 <NavLink href="/gallery">Gallery</NavLink>
                             </li>
+                            <li className="text-gray-600 hover:text-blue-600">
+                                <NavLink href="/gallery">Gallery</NavLink>
+                            </li>
                            
                         </ul>
                     </div>
                 </div>
             </div>
-            </Case>
+          
         </nav>
     );
 }
