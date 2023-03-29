@@ -7,12 +7,19 @@ import { Link , NavLink,useLocation} from "react-router-dom";
 export default function Navbar() {
     const [navbar, setNavbar] = useState(false);
     const [url, setUrl] = useState(null);
-    const location = useLocation();
+    // const location = useLocation();
 
-    useEffect(() => {
-        setUrl(location.pathname);
-        console.log(url)
-    }, [location]);
+    // useEffect(() => {
+    //     setUrl(location.pathname);
+    //     console.log(url)
+    // }, [location]);
+
+    const location = useLocation();
+  const locations = location.pathname;
+  console.log(location.pathname);
+  const getNavLinkClass = (path) => {
+    return props.location.pathname === path ? " active" : "";
+  };
 
     return (
         // <div className="bg-blue-600 w-screen py-2">

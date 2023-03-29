@@ -3,7 +3,7 @@ import Case from "../components/Case";
 export default function About() {
     return (
         <Case>
-            <div className="mx-auto lg:max-w-7xl md:items-center md:px-8 px-4">
+            <div className="mx-auto lg:max-w-7xl md:items-center md:px-8 px-4 ">
                 <h4 className="text-2xl">I'm About Page</h4>
                 <p className="text-lg leading-relaxed text-gray-400">
                     You can go to this page because the React router.
