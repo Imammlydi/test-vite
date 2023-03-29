@@ -14,7 +14,7 @@ export default function NavLinks({ href, children }) {
     return (
         <Link 
         
-        className={`${url}` === `${href}` ?" underline " : "text-textPrimary"}
+        className={`${url}` === `${href}` ?" text-textWhite " : "text-textPrimary"}
             to={href}
         >
             {children}
