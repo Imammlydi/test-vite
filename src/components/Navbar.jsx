@@ -1,11 +1,19 @@
-import React ,{useState}from "react";
+import React ,{useState,useEffect}from "react";
 import Case from "./Case";
-import NavLink from "./NavLink";
+import NavLinks from "./NavLinks";
 
-import { Link } from "react-router-dom";
+import { Link , NavLink,useLocation} from "react-router-dom";
 
 export default function Navbar() {
     const [navbar, setNavbar] = useState(false);
+    const [url, setUrl] = useState(null);
+    const location = useLocation();
+
+    useEffect(() => {
+        setUrl(location.pathname);
+        console.log(url)
+    }, [location]);
+
     return (
         // <div className="bg-blue-600 w-screen py-2">
         //     <Case>
@@ -77,17 +85,24 @@ export default function Navbar() {
                         }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-gray-600 hover:text-blue-600">
-                                <NavLink href="/">Home</NavLink>
+                            <li >
+                            {/* <li className="text-gray-600 hover:text-blue-600"> */}
+                                {/* <NavLinks href="/">Home</NavLinks> */}
+                                {/* <Link to="/" className={url === "/" ?" text-red-200" : "text-gray-600"}>Home</Link> */}
+                                <Link to="/" className={"underline" + (url === "/" ?" text-gray-600 " : "")}>Home</Link>
                             </li>
-                            <li className="text-gray-600 hover:text-blue-600">
-                                 <NavLink href="/about">About</NavLink>
+                            <li >
+                                 {/* <NavLinks href="/about">About</NavLinks> */}
+                                  <Link to="/about" className={"underline" + (url === "/about" ?" text-red-200" : "")}>About</Link>
                             </li>
-                            <li className="text-gray-600 hover:text-blue-600">
-                                <NavLink href="/gallery">Gallery</NavLink>
+                            {/* <li className="text-gray-600 hover:text-blue-600"> */}
+                            <li >
+                            <Link to="/gallery" className={"underline" + (url === "/gallery" ?" text-red-200" : "")}>Gallery</Link>
+                                {/* <NavLinks href="/gallery">Gallery</NavLinks> */}
                             </li>
-                            <li className="text-gray-600 hover:text-blue-600">
-                                <NavLink href="/gallery">Gallery</NavLink>
+                            {/* <li className="text-gray-600 hover:text-blue-600"> */}
+                            <li >
+                                <NavLinks href="/gallery">Gallery</NavLinks>
                             </li>
                            
                         </ul>
