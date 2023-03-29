@@ -7,19 +7,19 @@ import { Link , NavLink,useLocation} from "react-router-dom";
 export default function Navbar() {
     const [navbar, setNavbar] = useState(false);
     const [url, setUrl] = useState(null);
-    // const location = useLocation();
-
-    // useEffect(() => {
-    //     setUrl(location.pathname);
-    //     console.log(url)
-    // }, [location]);
-
     const location = useLocation();
-  const locations = location.pathname;
-  console.log(location.pathname);
-  const getNavLinkClass = (path) => {
-    return props.location.pathname === path ? " active" : "";
-  };
+
+    useEffect(() => {
+        setUrl(location.pathname);
+        console.log(url)
+    }, [location]);
+
+//     const location = useLocation();
+//   const locations = location.pathname;
+//   console.log(location.pathname);
+//   const getNavLinkClass = (path) => {
+//     return props.location.pathname === path ? " text-red-400" : "";
+//   };
 
     return (
         // <div className="bg-blue-600 w-screen py-2">
@@ -94,18 +94,18 @@ export default function Navbar() {
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
                             <li >
                             {/* <li className="text-gray-600 hover:text-blue-600"> */}
-                                {/* <NavLinks href="/">Home</NavLinks> */}
+                                <NavLinks href="/">Home</NavLinks>
                                 {/* <Link to="/" className={url === "/" ?" text-red-200" : "text-gray-600"}>Home</Link> */}
-                                <Link to="/" className={"underline" + (url === "/" ?" text-gray-600 " : "")}>Home</Link>
+                                {/* <Link to="/" className={`${url}` === "/" ?" text-red-600 " : ""}>Homes</Link> */}
                             </li>
                             <li >
-                                 {/* <NavLinks href="/about">About</NavLinks> */}
-                                  <Link to="/about" className={"underline" + (url === "/about" ?" text-red-200" : "")}>About</Link>
+                                 <NavLinks href="/about">About</NavLinks>
+                                  {/* <Link to="/about" className={"underline" + (url === "/about" ?" text-red-200" : "")}>About</Link> */}
                             </li>
                             {/* <li className="text-gray-600 hover:text-blue-600"> */}
                             <li >
-                            <Link to="/gallery" className={"underline" + (url === "/gallery" ?" text-red-200" : "")}>Gallery</Link>
-                                {/* <NavLinks href="/gallery">Gallery</NavLinks> */}
+                            {/* <Link to="/gallery" className={"underline" + (url === "/gallery" ?" text-red-200" : "")}>Gallery</Link> */}
+                                <NavLinks href="/gallery">Gallery</NavLinks>
                             </li>
                             {/* <li className="text-gray-600 hover:text-blue-600"> */}
                             <li >
