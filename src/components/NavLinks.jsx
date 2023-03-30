@@ -1,27 +1,27 @@
-import React ,{useState,useEffect}from "react";
-import { Link,NavLink,useLocation} from "react-router-dom";
-import  './navbar.css'
+import React, { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import "./navbar.css";
 export default function NavLinks({ href, children }) {
     const [url, setUrl] = useState(null);
     const location = useLocation();
 
     useEffect(() => {
         setUrl(location.pathname);
-        console.log(url)
+        console.log(url);
     }, [location]);
 
-
     return (
-        <Link 
-        
-        className={`${url}` === `${href}` ?" text-textWhite " : "text-textPrimary"}
+        <Link
+            className={
+                `${url}` === `${href}` ? " text-textWhite " : "text-textPrimary"
+            }
             to={href}
         >
             {children}
-        </Link >
-        // <NavLink 
-        
-        //     className="inline-flex px-4 py-2 text-textPrimary hover:text-white " 
+        </Link>
+        // <NavLink
+
+        //     className="inline-flex px-4 py-2 text-textPrimary hover:text-white "
         //     to={href}
         // >
         //     {children}

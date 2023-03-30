@@ -1,8 +1,8 @@
-import React ,{useState,useEffect}from "react";
+import React, { useState, useEffect } from "react";
 import Case from "./Case";
 import NavLinks from "./NavLinks";
 
-import { Link , NavLink,useLocation} from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 export default function Navbar() {
     const [navbar, setNavbar] = useState(false);
@@ -11,15 +11,15 @@ export default function Navbar() {
 
     useEffect(() => {
         setUrl(location.pathname);
-        console.log(url)
+        console.log(url);
     }, [location]);
 
-//     const location = useLocation();
-//   const locations = location.pathname;
-//   console.log(location.pathname);
-//   const getNavLinkClass = (path) => {
-//     return props.location.pathname === path ? " text-red-400" : "";
-//   };
+    //     const location = useLocation();
+    //   const locations = location.pathname;
+    //   console.log(location.pathname);
+    //   const getNavLinkClass = (path) => {
+    //     return props.location.pathname === path ? " text-red-400" : "";
+    //   };
 
     return (
         // <div className="bg-blue-600 w-screen py-2">
@@ -38,24 +38,25 @@ export default function Navbar() {
         //     </Case>
         // </div>
 
-         
-<nav className="w-full bg-primary shadow w-screen " >
-
-            <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8  shadow ">
+        <nav className="w-full w-screen bg-white shadow ">
+            <div className="mx-auto justify-between px-4 md:flex md:items-center md:px-8 lg:max-w-7xl   ">
                 <div>
-                    <div className="flex items-center justify-between py-3 md:py-5 md:block">
+                    <div className="flex items-center justify-between py-3 md:block md:py-5">
                         <a href="/">
-                            <h2 className="text-2xl font-bold text-textPrimary  hover:text-white"> <NavLinks href="/">Report</NavLinks></h2>
+                            <h2 className="text-2xl font-bold text-textPrimary  hover:text-white">
+                                {" "}
+                                <NavLinks href="/">Report</NavLinks>
+                            </h2>
                         </a>
                         <div className="md:hidden">
                             <button
-                                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                                className="text-gray-700 focus:border-gray-400 rounded-md p-2 outline-none focus:border"
                                 onClick={() => setNavbar(!navbar)}
                             >
                                 {navbar ? (
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6"
+                                        className="h-6 w-6"
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
                                     >
@@ -68,7 +69,7 @@ export default function Navbar() {
                                 ) : (
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="w-6 h-6"
+                                        className="h-6 w-6"
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
@@ -87,36 +88,34 @@ export default function Navbar() {
                 </div>
                 <div>
                     <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+                        className={`mt-8 flex-1 justify-self-center pb-3 md:mt-0 md:block md:pb-0 ${
                             navbar ? "block" : "hidden"
                         }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li >
-                            {/* <li className="text-gray-600 hover:text-blue-600"> */}
+                            <li>
+                                {/* <li className="text-gray-600 hover:text-blue-600"> */}
                                 <NavLinks href="/">Home</NavLinks>
                                 {/* <Link to="/" className={url === "/" ?" text-red-200" : "text-gray-600"}>Home</Link> */}
                                 {/* <Link to="/" className={`${url}` === "/" ?" text-red-600 " : ""}>Homes</Link> */}
                             </li>
-                            <li >
-                                 <NavLinks href="/about">About</NavLinks>
-                                  {/* <Link to="/about" className={"underline" + (url === "/about" ?" text-red-200" : "")}>About</Link> */}
+                            <li>
+                                <NavLinks href="/about">About</NavLinks>
+                                {/* <Link to="/about" className={"underline" + (url === "/about" ?" text-red-200" : "")}>About</Link> */}
                             </li>
                             {/* <li className="text-gray-600 hover:text-blue-600"> */}
-                            <li >
-                            {/* <Link to="/gallery" className={"underline" + (url === "/gallery" ?" text-red-200" : "")}>Gallery</Link> */}
+                            <li>
+                                {/* <Link to="/gallery" className={"underline" + (url === "/gallery" ?" text-red-200" : "")}>Gallery</Link> */}
                                 <NavLinks href="/gallery">Gallery</NavLinks>
                             </li>
                             {/* <li className="text-gray-600 hover:text-blue-600"> */}
-                            <li >
+                            <li>
                                 <NavLinks href="/gallery">Gallery</NavLinks>
                             </li>
-                           
                         </ul>
                     </div>
                 </div>
             </div>
-          
         </nav>
     );
 }

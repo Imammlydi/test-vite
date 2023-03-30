@@ -1,24 +1,17 @@
 import React from "react";
+import CardItem1 from "../components/CardItem1";
+import CardItem2 from "../components/CardItem2";
 import Case from "../components/Case";
 export default function About() {
     return (
         <>
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 lg:gap-1 mx-auto lg:max-w-7xl md:px-8 px-4">
-            <div className="bg-primary flex justify-center py-3"><h4 className="text-2xl">I'm About Page</h4></div>
-            <div className="bg-primary flex justify-center py-3"><h4 className="text-2xl">I'm About Page</h4></div>
-            <div className="bg-primary flex justify-center py-3"><h4 className="text-2xl">I'm About Page</h4></div>
-            <div className="bg-primary flex justify-center py-3"><h4 className="text-2xl">I'm About Page</h4></div>
-            <div className="bg-primary flex justify-center py-3"><h4 className="text-2xl">I'm About Page</h4></div>
-            <div className="bg-primary flex justify-center py-3"><h4 className="text-2xl">I'm About Page</h4></div>
-          
-         </div>
-      
-            {/* // <div className="mx-auto lg:max-w-7xl md:items-center md:px-8 px-4 ">
-            //     <h4 className="text-2xl">I'm About Page</h4>
-            //     <p className="text-lg leading-relaxed text-gray-400">
-            //         You can go to this page because the React router.
-            //     </p>
-            // </div> */}
+            <div class="mx-auto grid grid-cols-1 gap-4 px-4 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-4 lg:gap-1">
+                <CardItem1 />
+                <CardItem1 />
+                <CardItem1 />
+                <CardItem1 />
+                <CardItem2 />
+            </div>
         </>
     );
 }

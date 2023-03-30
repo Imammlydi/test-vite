@@ -3,12 +3,12 @@ import Case from "../components/Case";
 export default function Gallery() {
     return (
         // <Case>
-            <div className="mx-auto lg:max-w-7xl md:items-center md:px-8 px-4 ">
-                <h4 className="text-2xl">Your Gallery</h4>
-                <p className="text-lg leading-relaxed text-gray-400">
-                    The best, you are the best...
-                </p>
-            </div>
+        <div className="mx-auto px-4 md:items-center md:px-8 lg:max-w-7xl ">
+            <h4 className="text-2xl">Report</h4>
+            <p className="text-gray-400 text-lg leading-relaxed">
+                The best, you are the best...
+            </p>
+        </div>
         // </Case>
     );
 }
