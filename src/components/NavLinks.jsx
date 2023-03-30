@@ -13,7 +13,7 @@ export default function NavLinks({ href, children }) {
     return (
         <Link
             className={
-                `${url}` === `${href}` ? " text-textWhite " : "text-textPrimary"
+                `${url}` === `${href}` ? " text-textPrimary font-semibold" : "text-primary font-light"
             }
             to={href}
         >

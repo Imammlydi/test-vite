@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardItem2 = () => {
+const CardItem3 = () => {
     return (
         <div className="max-w-sm   overflow-hidden rounded bg-white shadow-lg">
              <img 
@@ -30,4 +30,4 @@ const CardItem2 = () => {
     );
 };
 
-export default CardItem2;
+export default CardItem3;

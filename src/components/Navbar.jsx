@@ -43,7 +43,7 @@ export default function Navbar() {
                 <div>
                     <div className="flex items-center justify-between py-3 md:block md:py-5">
                         <a href="/">
-                            <h2 className="text-2xl font-bold text-textPrimary  hover:text-white">
+                            <h2 className="text-2xl font-bold text-primary  hover:text-white">
                                 {" "}
                                 <NavLinks href="/">Report</NavLinks>
                             </h2>
