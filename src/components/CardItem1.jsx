@@ -4,8 +4,8 @@ const CardItem1 = () => {
     return (
         <div className="max-w-sm   overflow-hidden rounded bg-white shadow-lg">
             <div class="px-6 py-4">
-                <div class="mb-2 text-xl font-bold">The Coldest Sunset</div>
-                <p class="text-gray-700 text-base">
+                <div class="mb-2 text-xl font-bold ">The Coldest Sunset</div>
+                <p class="text-gray-700 text-base font-Bitter">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Voluptatibus quia, nulla! Maiores et perferendis eaque,
                     exercitationem praesentium nihil.

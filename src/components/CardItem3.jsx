@@ -2,11 +2,8 @@ import React from "react";
 
 const CardItem3 = () => {
     return (
-        <div className="max-w-sm   overflow-hidden rounded bg-white shadow-lg">
-             <img 
-      src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"
-      alt="new"
-      />
+        <div className="max-w-sm   overflow-hidden rounded bg-red shadow-lg">
+             
             <div class="px-6 py-4">
                 <div class="mb-2 text-xl font-bold">The Coldest Sunset</div>
                 <p class="text-gray-700 text-base">

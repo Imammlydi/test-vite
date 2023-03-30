@@ -10,7 +10,11 @@ module.exports = {
             textWhite: "#FFFFFF",
             textNotActive: "#85898A",
         },
-        extend: {},
+        extend: {
+            fontFamily: {
+                'Bitter': ['Bitter', 'cursive'],
+              },
+        },
     },
     plugins: [],
 };
