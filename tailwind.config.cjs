@@ -12,8 +12,8 @@ module.exports = {
         },
         extend: {
             fontFamily: {
-                'Bitter': ['Bitter', 'cursive'],
-              },
+                Bitter: ["Bitter", "cursive"],
+            },
         },
     },
     plugins: [],
