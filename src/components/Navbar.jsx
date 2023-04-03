@@ -110,7 +110,7 @@ export default function Navbar() {
                             </li>
                             {/* <li className="text-gray-600 hover:text-blue-600"> */}
                             <li>
-                                <NavLinks href="/gallery">Gallery</NavLinks>
+                                <NavLinks href="/login">Login</NavLinks>
                             </li>
                         </ul>
                     </div>
