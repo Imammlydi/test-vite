@@ -3,7 +3,7 @@ import Case from "../components/Case";
 export default function Login() {
     const LoginForm = () => {
         return (
-            <div class="w-full max-w-md">
+            <div class="w-full max-w-md ">
                 <form class="mb-4 rounded bg-white px-8 pt-6 pb-8 shadow-md">
                     <div class="mb-4">
                         <label
@@ -57,13 +57,15 @@ export default function Login() {
 
     return (
         // <Case>
-        <div className="mx-auto  grid grid-cols-1 gap-1 px-4 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-2 lg:gap-1">
-            <LoginForm />
-            <div className="xs:hidden bg-primary">
-                <img
-                    src="https://images.unsplash.com/photo-1680457405591-5b20bbf782dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                    alt="new"
-                />
+        <div className="mt-8 w-full   w-screen">
+            <div className="  mx-auto  grid grid-cols-1 gap-1 px-4 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-2 lg:gap-1">
+                <LoginForm />
+                <div className="xs:hidden ">
+                    <img
+                        src="https://images.unsplash.com/photo-1680457405591-5b20bbf782dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+                        alt="new"
+                    />
+                </div>
             </div>
         </div>
         // </Case>
