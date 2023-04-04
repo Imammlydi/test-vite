@@ -5,7 +5,7 @@ export default function App() {
     return (
         <>
             <Navbar />
-            <main className="min-h-screen pt-8">
+            <main className="min-h-screen bg-primary pt-8">
                 <Router />
             </main>
         </>
