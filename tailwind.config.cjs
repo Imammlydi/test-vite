@@ -10,6 +10,7 @@ module.exports = {
             textPrimary: "#24AFD2",
             textWhite: "#FFFFFF",
             textNotActive: "#85898A",
+            graydisable: "#dcdee3",
         },
         extend: {
             fontFamily: {

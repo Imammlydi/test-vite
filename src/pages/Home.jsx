@@ -1,8 +1,6 @@
 import React from "react";
-import Case from "../components/Case";
 export default function Home() {
     return (
-        // <Case>
         <div className="  mx-auto px-4 pt-8 md:items-center md:px-8 lg:max-w-7xl ">
             <h4 className="text-2xl">Hello React</h4>
             <p className="text-gray-400 text-lg leading-relaxed">
@@ -22,6 +20,5 @@ export default function Home() {
                 1.10.32.
             </p>
         </div>
-        // </Case>
     );
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import Case from "../components/Case";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
 export default function Login() {
@@ -20,7 +19,7 @@ export default function Login() {
                             Username
                         </label>
                         <input
-                            className="focus:outline-none font-Bitter text-slate-50  shadow-md focus:border-sky-700 focus:ring-sky-500 focus:ring-1   text-primary  mb-3 w-full appearance-none rounded  py-2 px-3 leading-tight "
+                            className="border-1 text-slate-50 focus:ring-sky-500 mb-3 w-full appearance-none   rounded border border-graydisable     py-2 px-3 font-Bitter leading-tight  focus:border-primary focus:outline-none focus:ring-1 "
                             id="username"
                             type="text"
                             placeholder="Username"
@@ -34,7 +33,7 @@ export default function Login() {
                             Password
                         </label>
                         <input
-                            className="focus:outline-none font-Bitter  shadow-md focus:border-sky-700 focus:ring-sky-500 focus:ring-1   text-primary  mb-3 w-full appearance-none rounded  py-2 px-3 leading-tight  "
+                            className="border-1 focus:ring-sky-900 mb-3 w-full appearance-none   rounded border   border-graydisable   py-2  px-3 font-Bitter leading-tight text-primary  focus:border-primary focus:outline-none focus:ring-1  "
                             id="password"
                             type="password"
                             placeholder="password"
@@ -82,12 +81,11 @@ export default function Login() {
     };
 
     return (
-        // <Case>
         <div className=" min-h-screen  w-full w-screen bg-secondary ">
             <div className="  py-5 pl-2 md:pl-4 lg:pl-5 xl:pl-5 ">
                 <BackButton href={"/"} />
             </div>
-            <div className="  mx-auto  flex justify-center px-2 ">
+            <div className="  xl:px6  mx-auto flex justify-center px-2 md:px-6 ">
                 <LoginForm />
             </div>
             {/* <div className="  mx-auto  grid grid-cols-1 gap-1 px-4 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-2 lg:gap-1">
@@ -100,6 +98,5 @@ export default function Login() {
                 </div>
             </div> */}
         </div>
-        // </Case>
     );
 }

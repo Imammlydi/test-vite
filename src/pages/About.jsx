@@ -1,8 +1,6 @@
 import React from "react";
-import CardItem1 from "../components/CardItem1";
-import CardItem2 from "../components/CardItem2";
-import Case from "../components/Case";
-import CardItem3 from "../components/CardItem3";
+import { CardItem1, CardItem2, CardItem3 } from "../components";
+
 export default function About() {
     return (
         <>
