@@ -14,13 +14,13 @@ export default function Login() {
                 <form class="mb-4   px-8 pt-6 pb-8 ">
                     <div class="mb-4">
                         <label
-                            class="text-gray-700 text-md mb-2 block font-Bitter font-bold"
+                            class="text-gray-700 text-md mb-2 block font-Bitter "
                             for="username"
                         >
                             Username
                         </label>
                         <input
-                            className="text-gray-700 focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight shadow focus:outline-none"
+                            className="focus:outline-none font-Bitter text-slate-50  shadow-md focus:border-sky-700 focus:ring-sky-500 focus:ring-1   text-primary  mb-3 w-full appearance-none rounded  py-2 px-3 leading-tight "
                             id="username"
                             type="text"
                             placeholder="Username"
@@ -28,16 +28,16 @@ export default function Login() {
                     </div>
                     <div class="mb-6">
                         <label
-                            class="text-gray-700 text-md mb-2 block font-Bitter font-bold"
+                            class="text-gray-700 text-md mb-2 block font-Bitter "
                             for="password"
                         >
                             Password
                         </label>
                         <input
-                            className="border-red-500 text-gray-700 focus:shadow-outline mb-3 w-full appearance-none rounded border py-2 px-3 leading-tight shadow focus:outline-none"
+                            className="focus:outline-none font-Bitter  shadow-md focus:border-sky-700 focus:ring-sky-500 focus:ring-1   text-primary  mb-3 w-full appearance-none rounded  py-2 px-3 leading-tight  "
                             id="password"
                             type="password"
-                            placeholder="******************"
+                            placeholder="password"
                         />
                         <p class="text-red-500 font-Bitter text-xs  italic">
                             Please choose a password.
@@ -45,7 +45,7 @@ export default function Login() {
                     </div>
                     <div class="flex items-center justify-between">
                         <button
-                            class="focus:shadow-outline rounded bg-primary py-2 px-4 font-Bitter font-bold text-white hover:bg-secondary  focus:outline-none"
+                            class="focus:shadow-outline rounded bg-primary py-2 px-4 font-Bitter font-bold text-white hover:bg-textPrimary  focus:outline-none"
                             type="button"
                         >
                             Sign In
