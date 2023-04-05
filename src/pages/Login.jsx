@@ -5,11 +5,16 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 export default function Login() {
     const LoginForm = () => {
         return (
-            <div class="w-full max-w-md ">
-                <form class="mb-4 rounded bg-white px-8 pt-6 pb-8 shadow-md">
+            <div class="w-full max-w-md rounded bg-white shadow-md">
+                <div className="flex justify-center">
+                    <h2 className="text-gray-700 my-4 block font-Bitter text-xl font-bold">
+                        Login
+                    </h2>
+                </div>
+                <form class="mb-4   px-8 pt-6 pb-8 ">
                     <div class="mb-4">
                         <label
-                            class="text-gray-700 mb-2 block text-sm font-bold"
+                            class="text-gray-700 text-md mb-2 block font-Bitter font-bold"
                             for="username"
                         >
                             Username
@@ -23,7 +28,7 @@ export default function Login() {
                     </div>
                     <div class="mb-6">
                         <label
-                            class="text-gray-700 mb-2 block text-sm font-bold"
+                            class="text-gray-700 text-md mb-2 block font-Bitter font-bold"
                             for="password"
                         >
                             Password
@@ -34,19 +39,19 @@ export default function Login() {
                             type="password"
                             placeholder="******************"
                         />
-                        <p class="text-red-500 text-xs italic">
+                        <p class="text-red-500 font-Bitter text-xs  italic">
                             Please choose a password.
                         </p>
                     </div>
                     <div class="flex items-center justify-between">
                         <button
-                            class="focus:shadow-outline rounded bg-primary py-2 px-4 font-bold text-white hover:bg-secondary focus:outline-none"
+                            class="focus:shadow-outline rounded bg-primary py-2 px-4 font-Bitter font-bold text-white hover:bg-secondary  focus:outline-none"
                             type="button"
                         >
                             Sign In
                         </button>
                         <a
-                            class="text-blue-500 hover:text-blue-800 inline-block align-baseline text-sm font-bold"
+                            class="text-blue-500 hover:text-blue-800 inline-block align-baseline font-Bitter text-sm font-bold"
                             href="#"
                         >
                             Forgot Password?
@@ -78,11 +83,14 @@ export default function Login() {
 
     return (
         // <Case>
-        <div className=" w-full   w-screen ">
-            <div className=" bg-textPrimary pb-5 sm:pl-2 md:pl-5 xl:pl-5 ">
+        <div className=" min-h-screen  w-full w-screen bg-secondary ">
+            <div className="  py-5 pl-2 md:pl-4 lg:pl-5 xl:pl-5 ">
                 <BackButton href={"/"} />
             </div>
-            <div className="  mx-auto  grid grid-cols-1 gap-1 px-4 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-2 lg:gap-1">
+            <div className="  mx-auto  flex justify-center px-2 ">
+                <LoginForm />
+            </div>
+            {/* <div className="  mx-auto  grid grid-cols-1 gap-1 px-4 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-2 lg:gap-1">
                 <LoginForm />
                 <div className="xs:hidden ">
                     <img
@@ -90,7 +98,7 @@ export default function Login() {
                         alt="new"
                     />
                 </div>
-            </div>
+            </div> */}
         </div>
         // </Case>
     );

@@ -14,6 +14,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 Bitter: ["Bitter", "cursive"],
+                BitterBold: ["Bitter:wght@700", "cursive"],
             },
             backgroundImage: {
                 hero: "url('/src/assets/image/Ill1.svg)",

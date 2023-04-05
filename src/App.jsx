@@ -16,7 +16,7 @@ export default function App() {
         <>
             {location.pathname !== "/login" && <Navbar />}
 
-            <main className="min-h-screen bg-primary pt-8">
+            <main className="min-h-screen bg-primary ">
                 <Router />
             </main>
         </>
