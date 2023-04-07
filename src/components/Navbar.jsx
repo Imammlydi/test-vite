@@ -100,7 +100,7 @@ export default function Navbar() {
                                 {/* <Link to="/" className={`${url}` === "/" ?" text-red-600 " : ""}>Homes</Link> */}
                             </li>
                             <li>
-                                <NavLinks href="/about">About</NavLinks>
+                                <NavLinks href="/report">Report</NavLinks>
                                 {/* <Link to="/about" className={"underline" + (url === "/about" ?" text-red-200" : "")}>About</Link> */}
                             </li>
                             {/* <li className="text-gray-600 hover:text-blue-600"> */}
@@ -112,6 +112,9 @@ export default function Navbar() {
                             <li>
                                 <NavLinks href="/login">Login</NavLinks>
                             </li>
+                            {/* <li>
+                                <NavLinks href="/detail_report">Detail Report</NavLinks>
+                            </li> */}
                         </ul>
                     </div>
                 </div>

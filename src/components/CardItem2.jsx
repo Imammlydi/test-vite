@@ -1,4 +1,5 @@
 import React from "react";
+import Button1 from "./Button1";
 
 const CardItem2 = () => {
     return (
@@ -22,9 +23,10 @@ const CardItem2 = () => {
                 <span class="bg-gray-200 text-gray-700 mr-2 mb-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
                     #travel
                 </span> */}
-                <button className="rounded border-none bg-primary py-2 px-4 font-bold text-textWhite hover:bg-textPrimary">
+                {/* <button className="rounded border-none bg-primary py-2 px-4 font-bold text-textWhite hover:bg-textPrimary">
                     Button
-                </button>
+                </button> */}
+                <Button1 Title={"Go"} href={"/detail_report"} />
             </div>
         </div>
     );

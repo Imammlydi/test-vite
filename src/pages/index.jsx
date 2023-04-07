@@ -1,7 +1,8 @@
-import About from "./About";
+import Report from "./Report";
 import Login from "./Login";
 import Home from "./Home";
 import Gallery from "./Gallery";
 import Register from "./Register";
+import DetailReport from "./DetailReport";
 
-export { About, Login, Home, Gallery, Register };
+export { Report, Login, Home, Gallery, Register, DetailReport };
