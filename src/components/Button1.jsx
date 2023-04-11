@@ -5,7 +5,7 @@ const Button1 = ({ href, Title }) => {
     return (
         <Link
             to={href}
-            className="rounded border-none bg-primary py-2 px-4 font-bold text-textWhite hover:bg-textPrimary"
+            className="rounded border-none bg-primary px-4 py-2 font-bold text-textWhite hover:bg-textPrimary"
         >
             <h4>{Title}</h4>
         </Link>

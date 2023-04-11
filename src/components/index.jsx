@@ -3,6 +3,7 @@ import CardItem2 from "./CardItem2";
 import CardItem3 from "./CardItem3";
 import NavLinks from "./NavLinks";
 import Navbar from "./Navbar";
+import Router2 from "./Router2";
 import Router from "./Router";
 import input1 from "./input1";
 import BackButton from "./BackButton";
@@ -18,4 +19,5 @@ export {
     input1,
     BackButton,
     Button1,
+    Router2,
 };

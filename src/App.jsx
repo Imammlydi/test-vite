@@ -21,7 +21,7 @@ export default function App() {
                 <div />
             )}
 
-            <main className="min-h-screen bg-primary ">
+            <main className="min-h-screen ">
                 <Router />
             </main>
         </>

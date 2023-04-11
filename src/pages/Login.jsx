@@ -11,7 +11,7 @@ export default function Login() {
                         Login
                     </h2>
                 </div>
-                <form class="mb-4   px-8 pt-6 pb-8 ">
+                <form class="mb-4   px-8 pb-8 pt-6 ">
                     <div class="mb-4">
                         <label
                             class="text-gray-700 text-md mb-2 block font-Bitter "
@@ -20,7 +20,7 @@ export default function Login() {
                             Username
                         </label>
                         <input
-                            className="border-1 text-slate-50 focus:ring-sky-500 mb-3 w-full appearance-none   rounded border border-graydisable     py-2 px-3 font-Bitter leading-tight  focus:border-primary focus:outline-none focus:ring-1 "
+                            className="border-1 text-slate-50 focus:ring-sky-500 mb-3 w-full appearance-none   rounded border border-graydisable     px-3 py-2 font-Bitter leading-tight  focus:border-primary focus:outline-none focus:ring-1 "
                             id="username"
                             type="text"
                             placeholder="Username"
@@ -34,7 +34,7 @@ export default function Login() {
                             Password
                         </label>
                         <input
-                            className="border-1 focus:ring-sky-900 mb-3 w-full appearance-none   rounded border   border-graydisable   py-2  px-3 font-Bitter leading-tight text-primary  focus:border-primary focus:outline-none focus:ring-1  "
+                            className="border-1 focus:ring-sky-900 mb-3 w-full appearance-none   rounded border   border-graydisable   px-3  py-2 font-Bitter leading-tight text-primary  focus:border-primary focus:outline-none focus:ring-1  "
                             id="password"
                             type="password"
                             placeholder="password"
@@ -45,7 +45,7 @@ export default function Login() {
                     </div>
                     <div class="flex items-center justify-between">
                         <button
-                            class="focus:shadow-outline rounded bg-primary py-2 px-4 font-Bitter font-bold text-white hover:bg-textPrimary  focus:outline-none"
+                            class="focus:shadow-outline rounded bg-primary px-4 py-2 font-Bitter font-bold text-white hover:bg-textPrimary  focus:outline-none"
                             type="button"
                         >
                             Sign In

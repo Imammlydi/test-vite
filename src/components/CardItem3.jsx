@@ -11,14 +11,14 @@ const CardItem3 = () => {
                     exercitationem praesentium nihil.
                 </p>
             </div>
-            <div class="flex flex-row-reverse px-3 pt-1 pb-2">
+            <div class="flex flex-row-reverse px-3 pb-2 pt-1">
                 {/* <span class="bg-gray-200 text-gray-700 mr-2 mb-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
                     #photography
                 </span>
                 <span class="bg-gray-200 text-gray-700 mr-2 mb-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
                     #travel
                 </span> */}
-                <button className="rounded border-none bg-primary py-2 px-4 font-bold text-textWhite hover:bg-textPrimary">
+                <button className="rounded border-none bg-primary px-4 py-2 font-bold text-textWhite hover:bg-textPrimary">
                     Button
                 </button>
             </div>

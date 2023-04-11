@@ -11,14 +11,14 @@ const CardItem1 = () => {
                     exercitationem praesentium nihil.
                 </p>
             </div>
-            <div class="px-3 pt-4 pb-2">
-                <span class="bg-gray-200 text-gray-700 mr-2 mb-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
+            <div class="px-3 pb-2 pt-4">
+                <span class="bg-gray-200 text-gray-700 mb-2 mr-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
                     #photography
                 </span>
-                <span class="bg-gray-200 text-gray-700 mr-2 mb-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
+                <span class="bg-gray-200 text-gray-700 mb-2 mr-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
                     #travel
                 </span>
-                <span class="bg-gray-200 text-gray-700 mr-2 mb-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
+                <span class="bg-gray-200 text-gray-700 mb-2 mr-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
                     #winter
                 </span>
             </div>
