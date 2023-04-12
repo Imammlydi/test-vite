@@ -1,6 +1,7 @@
 import CardItem1 from "./CardItem1";
 import CardItem2 from "./CardItem2";
 import CardItem3 from "./CardItem3";
+import CardItem4 from "./CardItem4";
 import NavLinks from "./NavLinks";
 import Navbar from "./Navbar";
 import Router2 from "./Router2";
@@ -22,4 +23,5 @@ export {
     Button1,
     Router2,
     Pagination,
+    CardItem4,
 };

@@ -1,9 +1,21 @@
 import React from "react";
+import { CardItem1, CardItem3, CardItem4 } from "../components";
 export default function Home() {
     return (
-        <div className="  mx-auto px-4 pt-8 md:items-center md:px-8 lg:max-w-7xl ">
+        <div className="  mx-auto px-4 pt-1 md:items-center md:px-8 lg:max-w-7xl ">
+            <div className="mx-auto grid grid-cols-1 gap-4 px-4 pt-8 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-4 lg:gap-1 fllex  ">
+
+       
+            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
+            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
+            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
+            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
+            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
+            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
+         
+            </div>
             <h4 className="text-2xl">Hello React</h4>
-            <p className="text-gray-400 text-lg leading-relaxed">
+            {/* <p className="text-gray-400 text-lg leading-relaxed">
                 A JavaScript library for building user interfaces Contrary to
                 popular belief, Lorem Ipsum is not simply random text. It has
                 roots in a piece of classical Latin literature from 45 BC,
@@ -18,7 +30,7 @@ export default function Home() {
                 popular during the Renaissance. The first line of Lorem Ipsum,
                 "Lorem ipsum dolor sit amet..", comes from a line in section
                 1.10.32.
-            </p>
+            </p> */}
         </div>
     );
 }

@@ -9,14 +9,14 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
 
     return (
         <nav>
-            <ul className="pagination  mb-3 grid max-w-md  grid-cols-12 gap-1 p-1">
+            <ul className="mx-auto pagination  mb-3 grid max-w-md  grid-cols-12 gap-1 px-1 py-3  my-5">
                 {pageNumbers.map((number) => (
                     <li key={number} className="page-item  ">
                         <a
                             onClick={() => {
                                 paginate(number), console.log(number);
                             }}
-                            className={`${number}` === `${number}` ?   "page-link rounded bg-primary p-1 text-center  md:p-3  lg:p-3" :  "page-link rounded bg-white p-1 text-center  md:p-3  lg:p-3"}
+                            className={`${number}` === `${number}` ?    "page-link rounded bg-white p-1 text-center  md:p-3  lg:p-3":  "page-link rounded bg-primary p-1 text-center  md:p-3  lg:p-3"}
                         >
                             {number}
                         </a>

@@ -13,7 +13,6 @@ import dummydata from "../assets/dummydata/dummy.json";
 export default function Report() {
     const [searchTerm, setSearchTerm] = useState("");
     const [datesearchTerm, setDateSearchTerm] = useState();
-    const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
@@ -98,7 +97,8 @@ export default function Report() {
 
     return (
         <>
-            <div className="mx-auto grid grid-cols-1 gap-4 px-4 pt-8 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-2 lg:gap-1 ">
+        
+            <div className="mx-auto grid grid-cols-1 gap-4 px-4 pt-8 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-2 lg:gap-1 fllex  ">
                 <Search />
             </div>
 
@@ -117,11 +117,7 @@ export default function Report() {
                     </TabList>
 
                     <TabPanel>
-                        <Pagination
-                            postsPerPage={postsPerPage}
-                            totalPosts={dummydata.length}
-                            paginate={paginate}
-                        />
+                     
                         <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
                             {currentPosts
                                 .filter(toSearch(searchTerm))
@@ -146,7 +142,18 @@ export default function Report() {
                                     />
                                 ))}
 
-                            {/* {
+                            
+                        </div>
+                        <Pagination
+                            postsPerPage={postsPerPage}
+                            totalPosts={dummydata.length}
+                            paginate={paginate}
+                        />
+                    </TabPanel>
+                    <TabPanel>
+                    <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
+
+                        {
                             dummydata.map((x) => {
                                 return (
                                     <CardItem2
@@ -156,11 +163,9 @@ export default function Report() {
                                     />
                                 );
                             })
-                            } */}
-                        </div>
-                    </TabPanel>
-                    <TabPanel>
-                        <h2>Any content 2</h2>
+                            }
+                    </div>
+
                     </TabPanel>
                     <TabPanel>
                         <h2>Any content 3</h2>
