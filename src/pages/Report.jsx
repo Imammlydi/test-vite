@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { CardItem1, CardItem2, CardItem3, Router2 } from "../components";
+import {
+    CardItem1,
+    CardItem2,
+    CardItem3,
+    Pagination,
+    Router2,
+} from "../components";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import dummydata from "../assets/dummydata/dummy.json";
@@ -7,18 +13,28 @@ import dummydata from "../assets/dummydata/dummy.json";
 export default function Report() {
     const [searchTerm, setSearchTerm] = useState("");
     const [datesearchTerm, setDateSearchTerm] = useState();
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(10);
+
+    // Get current posts
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = dummydata.slice(indexOfFirstPost, indexOfLastPost);
+
+    // Change page
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     const handleInputChange = (event) => {
         setSearchTerm(event.target.value);
     };
 
     const handleSubmit = (e) => {
-    
         e.preventDefault();
 
-        console.log(`Form submitted, ${searchTerm}`);    
-
-    }
+        console.log(`Form submitted, ${searchTerm}`);
+    };
 
     const toSearch = (searchTerm) => (item) => {
         if (searchTerm) {
@@ -70,11 +86,11 @@ export default function Report() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <button
-                        class="focus:shadow-outline ml-2 rounded bg-primary px-4 py-2 font-Bitter font-bold text-white hover:bg-textPrimary  focus:outline-none"
-                        type="submit"
-                    >
-                        search
-                    </button>
+                    class="focus:shadow-outline ml-2 rounded bg-primary px-4 py-2 font-Bitter font-bold text-white hover:bg-textPrimary  focus:outline-none"
+                    type="submit"
+                >
+                    search
+                </button>
                 {/* </div> */}
             </form>
         );
@@ -101,8 +117,13 @@ export default function Report() {
                     </TabList>
 
                     <TabPanel>
+                        <Pagination
+                            postsPerPage={postsPerPage}
+                            totalPosts={dummydata.length}
+                            paginate={paginate}
+                        />
                         <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
-                            {dummydata
+                            {currentPosts
                                 .filter(toSearch(searchTerm))
                                 .map((x, idx) => (
                                     <CardItem2
@@ -124,6 +145,7 @@ export default function Report() {
                                         image={x.image}
                                     />
                                 ))}
+
                             {/* {
                             dummydata.map((x) => {
                                 return (

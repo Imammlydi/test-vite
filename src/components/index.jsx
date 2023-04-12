@@ -8,6 +8,7 @@ import Router from "./Router";
 import input1 from "./input1";
 import BackButton from "./BackButton";
 import Button1 from "./Button1";
+import Pagination from "./Pagination";
 
 export {
     CardItem1,
@@ -20,4 +21,5 @@ export {
     BackButton,
     Button1,
     Router2,
+    Pagination,
 };
