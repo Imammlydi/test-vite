@@ -1,20 +1,13 @@
 import React from "react";
 import Button1 from "./Button1";
 
-const CardItem2 = () => {
+const CardItem2 = ({ title, desc, image }) => {
     return (
         <div className="max-w-sm   overflow-hidden rounded bg-white shadow-lg">
-            <img
-                src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"
-                alt="new"
-            />
+            <img className="h-40 w-full" src={image} alt="new" />
             <div class="px-6 py-4">
-                <div class="mb-2 text-xl font-bold">The Coldest Sunset</div>
-                <p class="text-gray-700 text-base">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                    exercitationem praesentium nihil.
-                </p>
+                <div class="text-md mb-2 font-bold">{title}</div>
+                <p class="text-gray-700 text-base">{desc}</p>
             </div>
             <div class="flex flex-row-reverse px-3 pb-2 pt-1">
                 {/* <span class="bg-gray-200 text-gray-700 mr-2 mb-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
