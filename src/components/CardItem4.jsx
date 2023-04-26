@@ -1,11 +1,15 @@
 import React from "react";
 
-const CardItem1 = ({title, value}) => {
+const CardItem1 = ({ title, value }) => {
     return (
         <div className="max-w-sm   overflow-hidden rounded bg-white shadow-lg">
             <div class="px-6 py-4">
-                <div class="mb-2 text-xl font-bold text-primary font-Bitter ">{title}</div>
-                <div class="my-4 text-6xl text-primary font-bold text-center ">{value}</div>
+                <div class="mb-2 font-Bitter text-xl font-bold text-primary ">
+                    {title}
+                </div>
+                <div class="my-4 text-center text-6xl font-bold text-primary ">
+                    {value}
+                </div>
                 {/* <p class="text-gray-700 font-Bitter text-base">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Voluptatibus quia, nulla! Maiores et perferendis eaque,

@@ -95,10 +95,23 @@ export default function Report() {
         );
     };
 
+    const Button3 = ({ title }) => {
+        return (
+            <div>
+                <button
+                    className="rounded border-none bg-primary px-4 py-2 font-bold text-textWhite hover:bg-textPrimary"
+                    s
+                >
+                    {title}
+                </button>
+            </div>
+        );
+    };
     return (
         <>
-        
-            <div className="mx-auto grid grid-cols-1 gap-4 px-4 pt-8 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-2 lg:gap-1 fllex  ">
+            <div className="fllex mx-auto  grid grid-cols-1 gap-4 px-4 pt-8 md:grid-cols-3 md:px-8  lg:max-w-7xl lg:grid-cols-3 lg:gap-1">
+                <Button3 title={"Input "} />
+                <div />
                 <Search />
             </div>
 
@@ -117,7 +130,6 @@ export default function Report() {
                     </TabList>
 
                     <TabPanel>
-                     
                         <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
                             {currentPosts
                                 .filter(toSearch(searchTerm))
@@ -141,8 +153,6 @@ export default function Report() {
                                         image={x.image}
                                     />
                                 ))}
-
-                            
                         </div>
                         <Pagination
                             postsPerPage={postsPerPage}
@@ -151,21 +161,29 @@ export default function Report() {
                         />
                     </TabPanel>
                     <TabPanel>
-                    <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
-
-                        {
-                            dummydata.map((x) => {
+                        <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
+                            {dummydata.map((x) => {
                                 return (
                                     <CardItem2
-                                        title={x.title.length > 17 ? x.title.substring(0,17) + '.....': x.title }
-                                        desc={x.description.length > 29 ? x.description.substring(0,29) + '.....': x.description }
+                                        title={
+                                            x.title.length > 17
+                                                ? x.title.substring(0, 17) +
+                                                  "....."
+                                                : x.title
+                                        }
+                                        desc={
+                                            x.description.length > 29
+                                                ? x.description.substring(
+                                                      0,
+                                                      29
+                                                  ) + "....."
+                                                : x.description
+                                        }
                                         image={x.image}
                                     />
                                 );
-                            })
-                            }
-                    </div>
-
+                            })}
+                        </div>
                     </TabPanel>
                     <TabPanel>
                         <h2>Any content 3</h2>

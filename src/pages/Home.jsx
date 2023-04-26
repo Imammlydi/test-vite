@@ -3,16 +3,13 @@ import { CardItem1, CardItem3, CardItem4 } from "../components";
 export default function Home() {
     return (
         <div className="  mx-auto px-4 pt-1 md:items-center md:px-8 lg:max-w-7xl ">
-            <div className="mx-auto grid grid-cols-1 gap-4 px-4 pt-8 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-4 lg:gap-1 fllex  ">
-
-       
-            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
-            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
-            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
-            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
-            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
-            <CardItem4 title={"Progress Powerhouse Area"} value={"50%"}/>
-         
+            <div className="fllex mx-auto grid grid-cols-1 gap-4 px-4 pt-8 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-4 lg:gap-1  ">
+                <CardItem4 title={"Progress Powerhouse Area"} value={"50%"} />
+                <CardItem4 title={"Progress Powerhouse Area"} value={"50%"} />
+                <CardItem4 title={"Progress Powerhouse Area"} value={"50%"} />
+                <CardItem4 title={"Progress Powerhouse Area"} value={"50%"} />
+                <CardItem4 title={"Progress Powerhouse Area"} value={"50%"} />
+                <CardItem4 title={"Progress Powerhouse Area"} value={"50%"} />
             </div>
             <h4 className="text-2xl">Hello React</h4>
             {/* <p className="text-gray-400 text-lg leading-relaxed">
