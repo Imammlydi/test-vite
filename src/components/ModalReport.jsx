@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 
 const ModalReport = () => {
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+
+    const initialFormState = {
+        // id: "",
+        title: "",
+        description: "",
+        shift: "",
+        tanggal: "",
+    };
+
+    const [data, setData] = useState(initialFormState);
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+
+        setData({ ...data, [name]: value });
+    };
+    const onSubmitData = (event) => {
+        event.preventDefault();
+        // seFetcReports(idInspector,datas)
+        console.log("called", data);
+    };
+
+    const sendData = () => {
+        console.log("called", data);
+    };
+
     const customStyles = {
         content: {
             top: "50%",
@@ -9,13 +35,16 @@ const ModalReport = () => {
             right: "auto",
             bottom: "auto",
             //   marginRight: '-50%',
-            backgroundColor: "white",
+            backgroundColor: "transparent",
+            border: "none",
             transform: "translate(-50%, -50%)",
-            width: "90%",
+            width: "100%",
+            // '@media only screen and (max-width: 600px)': {
+            //     width: '50%',
+            //   },
         },
     };
 
-    const [modalIsOpen, setIsOpen] = React.useState(false);
     let subtitle;
 
     function openModal() {
@@ -26,7 +55,6 @@ const ModalReport = () => {
         // references are now sync'd and can be accessed.
         subtitle.style.color = "#f00";
     }
-
     function closeModal() {
         setIsOpen(false);
     }
@@ -42,6 +70,28 @@ const ModalReport = () => {
             </div>
         );
     };
+    const Form = () => {
+        return (
+            <form class="mb-4    pt-1 " onSubmit={onSubmitData}>
+                {/* <div class="mb-1"> */}
+                <input
+                    className="border-1 text-slate-50 focus:ring-sky-500  appearance-none rounded   border border-graydisable px-3     py-3 font-Bitter leading-tight focus:border-primary  focus:outline-none focus:ring-1 lg:max-w-5xl "
+                    type="text"
+                    placeholder="title"
+                    name="title"
+                    value={data.title}
+                    onChange={handleInputChange}
+                />
+                <button
+                    class="focus:shadow-outline ml-2 rounded bg-primary px-4 py-2 font-Bitter font-bold text-white hover:bg-textPrimary  focus:outline-none"
+                    type="submit"
+                >
+                    search
+                </button>
+                {/* </div> */}
+            </form>
+        );
+    };
 
     return (
         <>
@@ -53,9 +103,59 @@ const ModalReport = () => {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
+                <div className="  flex justify-center ">
+                    <div className="rounded-lg  border bg-white py-4">
+                        <div className="flex  w-96 justify-center py-3">
+                            <h4 className="font-Bitter font-semibold text-primary">
+                                Add Report
+                            </h4>
+                        </div>
+                        <div className=" w-96 px-7 lg:px-2">
+                            <form action="" className="mb-4    pt-1">
+                                <input
+                                    type="text"
+                                    className="border-1 text-slate-50 focus:ring-sky-500 my-2 w-full  appearance-none rounded   border border-graydisable px-3     py-3 font-Bitter leading-tight focus:border-primary  focus:outline-none focus:ring-1 lg:max-w-5xl "
+                                    placeholder="title"
+                                    name="title"
+                                    value={data.title}
+                                    onChange={handleInputChange}
+                                />
+                                <input
+                                    type="text"
+                                    className="border-1 text-slate-50 focus:ring-sky-500 my-2 w-full  appearance-none rounded   border border-graydisable px-3     py-3 font-Bitter leading-tight focus:border-primary  focus:outline-none focus:ring-1 lg:max-w-5xl "
+                                    placeholder="description"
+                                    name="description"
+                                    value={data.description}
+                                    onChange={handleInputChange}
+                                />
+                                <input
+                                    type="text"
+                                    className="border-1 text-slate-50 focus:ring-sky-500 my-2 w-full  appearance-none rounded   border border-graydisable px-3     py-3 font-Bitter leading-tight focus:border-primary  focus:outline-none focus:ring-1 lg:max-w-5xl "
+                                    placeholder="shift"
+                                    name="shift"
+                                    value={data.shift}
+                                    onChange={handleInputChange}
+                                />
+                                <input
+                                    type="date"
+                                    className="border-1 text-slate-50 focus:ring-sky-500 my-2 w-full  appearance-none rounded   border border-graydisable px-3     py-3 font-Bitter leading-tight focus:border-primary  focus:outline-none focus:ring-1 lg:max-w-5xl "
+                                    placeholder="tanggal"
+                                    name="tanggal"
+                                    value={data.tanggal}
+                                    onChange={handleInputChange}
+                                />
+                            </form>
+                        </div>
+                        <div className="flex justify-end px-7 lg:px-2">
+                            <Button3 title={"Close"} onClick={closeModal} />
+                            <Button3
+                                title={"Create"}
+                                type="submit"
+                                onClick={sendData}
+                            />
+                        </div>
+                    </div>
+                </div>
             </Modal>
         </>
     );
