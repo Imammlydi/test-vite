@@ -13,17 +13,19 @@ export default function App() {
 
     return (
         <>
-            {/* {location.pathname !== "/login"  && <Navbar />} */}
-            {location.pathname !== "/login" &&
-            location.pathname !== "/detail_report" ? (
-                <Navbar />
-            ) : (
-                <div />
-            )}
+            <div className="relative">
+                {/* {location.pathname !== "/login"  && <Navbar />} */}
+                {location.pathname !== "/login" &&
+                location.pathname !== "/detail_report" ? (
+                    <Navbar />
+                ) : (
+                    <div />
+                )}
 
-            <main className="min-h-screen ">
-                <Router />
-            </main>
+                <main className="min-h-screen ">
+                    <Router />
+                </main>
+            </div>
         </>
     );
 }

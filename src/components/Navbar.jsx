@@ -38,7 +38,7 @@ export default function Navbar() {
         //     </Case>
         // </div>
 
-        <nav className="w-full w-screen bg-white shadow ">
+        <nav className="sticky top-0 w-full w-screen bg-white  shadow ">
             <div className="mx-auto justify-between px-4 md:flex md:items-center md:px-8 lg:max-w-7xl   ">
                 <div>
                     <div className="flex items-center justify-between py-3 md:block md:py-5">

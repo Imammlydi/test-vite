@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardItem1 = ({ title, value }) => {
+const CardItem5 = ({ title, value }) => {
     const Chart1 = () => {
         return (
             <div className="absolute bottom-6 right-12">
@@ -20,7 +20,7 @@ const CardItem1 = ({ title, value }) => {
         );
     };
     return (
-        <div className="relative   max-w-sm overflow-hidden rounded bg-blue1 shadow-lg">
+        <div className="relative   max-w-sm overflow-hidden rounded bg-red1 shadow-lg">
             <Chart1 />
             <div class="px-6 py-4">
                 <div class="mb-2 font-Bitter text-xl font-bold text-white ">
@@ -50,4 +50,4 @@ const CardItem1 = ({ title, value }) => {
     );
 };
 
-export default CardItem1;
+export default CardItem5;

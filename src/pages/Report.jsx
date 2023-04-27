@@ -3,12 +3,14 @@ import {
     CardItem1,
     CardItem2,
     CardItem3,
+    ModalReport,
     Pagination,
     Router2,
 } from "../components";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import dummydata from "../assets/dummydata/dummy.json";
+import Modal from "react-modal";
 
 export default function Report() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -95,27 +97,29 @@ export default function Report() {
         );
     };
 
-    const Button3 = ({ title }) => {
+    const Button3 = ({ title, onClick }) => {
         return (
             <div>
                 <button
                     className="rounded border-none bg-primary px-4 py-2 font-bold text-textWhite hover:bg-textPrimary"
-                    s
+                    onClick={onClick}
                 >
                     {title}
                 </button>
             </div>
         );
     };
+
     return (
         <>
             <div className="fllex mx-auto  grid grid-cols-1 gap-4 px-4 pt-8 md:grid-cols-3 md:px-8  lg:max-w-7xl lg:grid-cols-3 lg:gap-1">
-                <Button3 title={"Input "} />
+                {/* <Button3 title={"Input "} onClick={openModal} /> */}
+                <ModalReport />
                 <div />
                 <Search />
             </div>
 
-            <div className="mx-auto mb-3 flex gap-4 px-4 pt-8 md:px-8 lg:max-w-7xl ">
+            <div className="mx-auto  px-4 pt-8 md:px-8 lg:max-w-7xl  ">
                 <Tabs>
                     <TabList>
                         <Tab>

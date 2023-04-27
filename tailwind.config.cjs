@@ -11,6 +11,8 @@ module.exports = {
             textWhite: "#FFFFFF",
             textNotActive: "#85898A",
             graydisable: "#dcdee3",
+            blue1: "#00AEEF",
+            red1: "#ED1C24",
         },
         extend: {
             fontFamily: {
