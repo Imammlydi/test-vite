@@ -1,4 +1,5 @@
-[
+{
+    "reports":[
     {
         "id": 1,
         "title": "Compactor",
@@ -220,3 +221,4 @@
         "shift": true
     }
 ]
+}

@@ -10,8 +10,8 @@ import input1 from "./input1";
 import BackButton from "./BackButton";
 import Button1 from "./Button1";
 import Pagination from "./Pagination";
-import CardItem5 from "./CardItem5";
 import ModalReport from "./ModalReport";
+
 
 export {
     CardItem1,
@@ -26,6 +26,7 @@ export {
     Router2,
     Pagination,
     CardItem4,
-    CardItem5,
+
     ModalReport,
+  
 };

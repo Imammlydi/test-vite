@@ -13,6 +13,7 @@ module.exports = {
             graydisable: "#dcdee3",
             blue1: "#00AEEF",
             red1: "#ED1C24",
+            yellow1: "#FFF200",
         },
         extend: {
             fontFamily: {
