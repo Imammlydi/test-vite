@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { createItem } from "../services";
 
 const ModalReport = () => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -10,6 +11,7 @@ const ModalReport = () => {
         description: "",
         shift: "",
         tanggal: "",
+        image:"https://plus.unsplash.com/premium_photo-1664880019462-b69c41f2dad4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     };
 
     const [data, setData] = useState(initialFormState);
@@ -26,6 +28,7 @@ const ModalReport = () => {
 
     const sendData = () => {
         console.log("called", data);
+        createItem(data)
     };
 
     const customStyles = {

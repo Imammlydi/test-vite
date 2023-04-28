@@ -11,6 +11,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import dummydata from "../assets/dummydata/dummy.json";
 import Modal from "react-modal";
+import { getItems } from "../services";
 
 export default function Report() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -18,11 +19,12 @@ export default function Report() {
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
+    const [data,setData] = useState([])
 
     // Get current posts
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = dummydata.slice(indexOfFirstPost, indexOfLastPost);
+    const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
 
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -74,6 +76,17 @@ export default function Report() {
             />
         ));
 
+        const fetchItems = async () => {
+            const itemsData = await getItems();
+            setData(itemsData);
+            // console.log(itemsData)
+          };
+       
+        useEffect(() => {
+            fetchItems()
+            // console.log(data)
+        }, [])
+        
     const Search = () => {
         return (
             <form class="mb-4    pt-1 " onSubmit={handleSubmit}>
@@ -116,6 +129,7 @@ export default function Report() {
                 {/* <Button3 title={"Input "} onClick={openModal} /> */}
                 <ModalReport />
                 <div />
+                {/* <Button3 title={"a"} onClick={()=>{ console.log(data)}}/> */}
                 <Search />
             </div>
 

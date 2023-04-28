@@ -1,0 +1,1 @@
+export const urlReport ="http://localhost:3000/reports"
