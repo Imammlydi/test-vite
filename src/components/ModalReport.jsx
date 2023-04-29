@@ -11,7 +11,7 @@ const ModalReport = () => {
         description: "",
         shift: "",
         tanggal: "",
-        image:"https://plus.unsplash.com/premium_photo-1664880019462-b69c41f2dad4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+        image:"https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
     };
 
     const [data, setData] = useState(initialFormState);
@@ -27,8 +27,9 @@ const ModalReport = () => {
     };
 
     const sendData = () => {
-        console.log("called", data);
+        // console.log("called", data);
         createItem(data)
+       
     };
 
     const customStyles = {
@@ -154,7 +155,11 @@ const ModalReport = () => {
                             <Button3
                                 title={"Create"}
                                 type="submit"
-                                onClick={sendData}
+                                onClick={
+                                    sendData
+                                 
+  
+                                }
                             />
                         </div>
                     </div>

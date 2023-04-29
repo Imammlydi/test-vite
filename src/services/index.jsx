@@ -16,9 +16,11 @@ export const getItems = async () => {
 export const createItem = async (item) => {
   try {
     const response = await axios.post(urlReport, item);
-    return response.data;
+   return [response.data,
+    window.location.reload()]
   } catch (error) {
     console.error(error);
+    
   }
 };
 
