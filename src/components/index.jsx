@@ -11,8 +11,7 @@ import BackButton from "./BackButton";
 import Button1 from "./Button1";
 import Pagination from "./Pagination";
 import ModalReport from "./ModalReport";
-import BottomNavbar from './BottomNavbar';
-
+import BottomNavbar from "./BottomNavbar";
 
 export {
     CardItem1,
@@ -27,8 +26,6 @@ export {
     Router2,
     Pagination,
     CardItem4,
-
     ModalReport,
     BottomNavbar,
-  
 };

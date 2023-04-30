@@ -12,6 +12,7 @@ import "react-tabs/style/react-tabs.css";
 import dummydata from "../assets/dummydata/dummy.json";
 import Modal from "react-modal";
 import { getItems } from "../services";
+import ReactLoading from "react-loading";
 
 export default function Report() {
     const [searchTerm, setSearchTerm] = useState("");
@@ -19,7 +20,7 @@ export default function Report() {
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
-    const [data,setData] = useState([])
+    const [data, setData] = useState([]);
 
     // Get current posts
     const indexOfLastPost = currentPage * postsPerPage;
@@ -76,17 +77,17 @@ export default function Report() {
             />
         ));
 
-        const fetchItems = async () => {
-            const itemsData = await getItems();
-            setData(itemsData);
-            // console.log(itemsData)
-          };
-       
-        useEffect(() => {
-            fetchItems()
-            // console.log(data)
-        }, [])
-        
+    const fetchItems = async () => {
+        const itemsData = await getItems();
+        setData(itemsData);
+        // console.log(itemsData)
+    };
+
+    useEffect(() => {
+        fetchItems();
+        // console.log(data)
+    }, []);
+
     const Search = () => {
         return (
             <form class="mb-4    pt-1 " onSubmit={handleSubmit}>
@@ -131,6 +132,7 @@ export default function Report() {
                 <div />
                 {/* <Button3 title={"a"} onClick={()=>{ console.log(data)}}/> */}
                 <Search />
+                {/* <ReactLoading type={"spin"} color={"#00AEEF"} height={50} width={60} /> */}
             </div>
 
             <div className="mx-auto  px-4 pt-8 md:px-8 lg:max-w-7xl  ">
@@ -148,30 +150,41 @@ export default function Report() {
                     </TabList>
 
                     <TabPanel>
-                        <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
-                            {currentPosts
-                                .filter(toSearch(searchTerm))
-                                .map((x, idx) => (
-                                    <CardItem2
-                                        key={idx}
-                                        title={
-                                            x.title.length > 17
-                                                ? x.title.substring(0, 17) +
-                                                  "....."
-                                                : x.title
-                                        }
-                                        desc={
-                                            x.description.length > 29
-                                                ? x.description.substring(
-                                                      0,
-                                                      18
-                                                  ) + "....."
-                                                : x.description
-                                        }
-                                        image={x.image}
-                                    />
-                                ))}
-                        </div>
+                        {currentPosts.length >= 1 ? (
+                            <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
+                                {currentPosts
+                                    .filter(toSearch(searchTerm))
+                                    .map((x, idx) => (
+                                        <CardItem2
+                                            key={idx}
+                                            title={
+                                                x.title.length > 17
+                                                    ? x.title.substring(0, 17) +
+                                                      "....."
+                                                    : x.title
+                                            }
+                                            desc={
+                                                x.description.length > 29
+                                                    ? x.description.substring(
+                                                          0,
+                                                          18
+                                                      ) + "....."
+                                                    : x.description
+                                            }
+                                            image={x.image}
+                                        />
+                                    ))}
+                            </div>
+                        ) : (
+                            <div className="mt-5 flex justify-center">
+                                <ReactLoading
+                                    type={"spin"}
+                                    color={"#00AEEF"}
+                                    height={50}
+                                    width={60}
+                                />
+                            </div>
+                        )}
                         <Pagination
                             postsPerPage={postsPerPage}
                             totalPosts={dummydata.length}

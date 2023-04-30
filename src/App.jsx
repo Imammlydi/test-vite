@@ -19,17 +19,14 @@ export default function App() {
                 {/* {location.pathname !== "/login"  && <Navbar />} */}
                 {location.pathname !== "/login" &&
                 location.pathname !== "/detail_report" ? (
+                    // && width >= 768 && width >= 1024
                     <Navbar />
-                ) : (
-                    <div />
-                )}
+                ) : null}
 
                 <main className="min-h-screen ">
                     <Router />
                 </main>
-               {width < 768 || width < 1024 ? <BottomNavbar/> : null}
-
-             
+                {width < 768 || width < 1024 ? <BottomNavbar /> : null}
             </div>
         </>
     );

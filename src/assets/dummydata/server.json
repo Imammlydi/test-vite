@@ -1,224 +1,224 @@
 {
-    "reports":[
-    {
-        "id": 1,
-        "title": "Compactor",
-        "description": "Structural and Misc Steel (Fabrication)",
-        "date": "18-02-2023",
-        "image": "http://dummyimage.com/252x155.png/dddddd/000000",
-        "avatar": "http://dummyimage.com/106x107.png/cc0000/ffffff",
-        "status": true,
-        "work_hours": 60,
-        "shift": false
-    },
-    {
-        "id": 2,
-        "title": "Dump Truck",
-        "description": "HVAC",
-        "date": "23-07-2022",
-        "image": "http://dummyimage.com/254x154.png/5fa2dd/ffffff",
-        "avatar": "http://dummyimage.com/102x108.png/5fa2dd/ffffff",
-        "status": false,
-        "work_hours": 22,
-        "shift": false
-    },
-    {
-        "id": 3,
-        "title": "Excavator",
-        "description": "Glass & Glazing",
-        "date": "01-03-2023",
-        "image": "http://dummyimage.com/256x157.png/5fa2dd/ffffff",
-        "avatar": "http://dummyimage.com/116x110.png/ff4444/ffffff",
-        "status": false,
-        "work_hours": 81,
-        "shift": false
-    },
-    {
-        "id": 4,
-        "title": "Dump Truck",
-        "description": "Drywall & Acoustical (MOB)",
-        "date": "24-02-2023",
-        "image": "http://dummyimage.com/251x157.png/5fa2dd/ffffff",
-        "avatar": "http://dummyimage.com/115x108.png/5fa2dd/ffffff",
-        "status": false,
-        "work_hours": 63,
-        "shift": true
-    },
-    {
-        "id": 5,
-        "title": "Bulldozer",
-        "description": "Construction Clean and Final Clean",
-        "date": "09-09-2022",
-        "image": "http://dummyimage.com/259x151.png/dddddd/000000",
-        "avatar": "http://dummyimage.com/113x117.png/dddddd/000000",
-        "status": false,
-        "work_hours": 26,
-        "shift": false
-    },
-    {
-        "id": 6,
-        "title": "Crawler",
-        "description": "Ornamental Railings",
-        "date": "10-06-2022",
-        "image": "http://dummyimage.com/252x157.png/dddddd/000000",
-        "avatar": "http://dummyimage.com/110x109.png/dddddd/000000",
-        "status": false,
-        "work_hours": 61,
-        "shift": false
-    },
-    {
-        "id": 7,
-        "title": "Trencher",
-        "description": "Temp Fencing, Decorative Fencing and Gates",
-        "date": "23-05-2022",
-        "image": "http://dummyimage.com/260x158.png/dddddd/000000",
-        "avatar": "http://dummyimage.com/108x105.png/dddddd/000000",
-        "status": true,
-        "work_hours": 20,
-        "shift": true
-    },
-    {
-        "id": 8,
-        "title": "Backhoe",
-        "description": "Curb & Gutter",
-        "date": "09-04-2023",
-        "image": "http://dummyimage.com/250x155.png/dddddd/000000",
-        "avatar": "http://dummyimage.com/113x110.png/cc0000/ffffff",
-        "status": false,
-        "work_hours": 16,
-        "shift": true
-    },
-    {
-        "id": 9,
-        "title": "Compactor",
-        "description": "Fire Sprinkler System",
-        "date": "18-07-2022",
-        "image": "http://dummyimage.com/253x157.png/cc0000/ffffff",
-        "avatar": "http://dummyimage.com/119x102.png/ff4444/ffffff",
-        "status": true,
-        "work_hours": 36,
-        "shift": false
-    },
-    {
-        "id": 10,
-        "title": "Skid-Steer",
-        "description": "Masonry",
-        "date": "19-03-2023",
-        "image": "http://dummyimage.com/250x152.png/ff4444/ffffff",
-        "avatar": "http://dummyimage.com/106x105.png/5fa2dd/ffffff",
-        "status": false,
-        "work_hours": 95,
-        "shift": true
-    },
-    {
-        "id": 11,
-        "title": "Dragline",
-        "description": "Elevator",
-        "date": "06-07-2022",
-        "image": "http://dummyimage.com/250x153.png/ff4444/ffffff",
-        "avatar": "http://dummyimage.com/117x115.png/5fa2dd/ffffff",
-        "status": false,
-        "work_hours": 39,
-        "shift": true
-    },
-    {
-        "id": 12,
-        "title": "Dragline",
-        "description": "RF Shielding",
-        "date": "21-06-2022",
-        "image": "http://dummyimage.com/252x160.png/5fa2dd/ffffff",
-        "avatar": "http://dummyimage.com/117x100.png/5fa2dd/ffffff",
-        "status": true,
-        "work_hours": 11,
-        "shift": true
-    },
-    {
-        "id": 13,
-        "title": "Compactor",
-        "description": "Prefabricated Aluminum Metal Canopies",
-        "date": "21-12-2022",
-        "image": "http://dummyimage.com/260x152.png/ff4444/ffffff",
-        "avatar": "http://dummyimage.com/101x109.png/ff4444/ffffff",
-        "status": false,
-        "work_hours": 19,
-        "shift": false
-    },
-    {
-        "id": 14,
-        "title": "Scraper",
-        "description": "Structural & Misc Steel Erection",
-        "date": "02-03-2023",
-        "image": "http://dummyimage.com/254x150.png/ff4444/ffffff",
-        "avatar": "http://dummyimage.com/108x100.png/ff4444/ffffff",
-        "status": true,
-        "work_hours": 89,
-        "shift": true
-    },
-    {
-        "id": 15,
-        "title": "Skid-Steer",
-        "description": "Drywall & Acoustical (MOB)",
-        "date": "26-09-2022",
-        "image": "http://dummyimage.com/251x154.png/5fa2dd/ffffff",
-        "avatar": "http://dummyimage.com/111x104.png/cc0000/ffffff",
-        "status": false,
-        "work_hours": 4,
-        "shift": false
-    },
-    {
-        "id": 16,
-        "title": "Excavator",
-        "description": "Ornamental Railings",
-        "date": "03-11-2022",
-        "image": "http://dummyimage.com/252x150.png/cc0000/ffffff",
-        "avatar": "http://dummyimage.com/111x114.png/cc0000/ffffff",
-        "status": false,
-        "work_hours": 25,
-        "shift": true
-    },
-    {
-        "id": 17,
-        "title": "Skid-Steer",
-        "description": "Drilled Shafts",
-        "date": "07-05-2022",
-        "image": "http://dummyimage.com/258x155.png/dddddd/000000",
-        "avatar": "http://dummyimage.com/102x107.png/cc0000/ffffff",
-        "status": true,
-        "work_hours": 73,
-        "shift": true
-    },
-    {
-        "id": 18,
-        "title": "Dragline",
-        "description": "Curb & Gutter",
-        "date": "10-02-2023",
-        "image": "http://dummyimage.com/254x153.png/cc0000/ffffff",
-        "avatar": "http://dummyimage.com/110x120.png/dddddd/000000",
-        "status": true,
-        "work_hours": 99,
-        "shift": false
-    },
-    {
-        "id": 19,
-        "title": "Backhoe",
-        "description": "Soft Flooring and Base",
-        "date": "24-12-2022",
-        "image": "http://dummyimage.com/257x151.png/cc0000/ffffff",
-        "avatar": "http://dummyimage.com/113x119.png/5fa2dd/ffffff",
-        "status": true,
-        "work_hours": 90,
-        "shift": false
-    },
-    {
-        "id": 20,
-        "title": "Compactor",
-        "description": "Fire Sprinkler System",
-        "date": "08-05-2022",
-        "image": "http://dummyimage.com/250x157.png/cc0000/ffffff",
-        "avatar": "http://dummyimage.com/115x107.png/5fa2dd/ffffff",
-        "status": false,
-        "work_hours": 78,
-        "shift": true
-    }
-]
+    "reports": [
+        {
+            "id": 1,
+            "title": "Compactor",
+            "description": "Structural and Misc Steel (Fabrication)",
+            "date": "18-02-2023",
+            "image": "http://dummyimage.com/252x155.png/dddddd/000000",
+            "avatar": "http://dummyimage.com/106x107.png/cc0000/ffffff",
+            "status": true,
+            "work_hours": 60,
+            "shift": false
+        },
+        {
+            "id": 2,
+            "title": "Dump Truck",
+            "description": "HVAC",
+            "date": "23-07-2022",
+            "image": "http://dummyimage.com/254x154.png/5fa2dd/ffffff",
+            "avatar": "http://dummyimage.com/102x108.png/5fa2dd/ffffff",
+            "status": false,
+            "work_hours": 22,
+            "shift": false
+        },
+        {
+            "id": 3,
+            "title": "Excavator",
+            "description": "Glass & Glazing",
+            "date": "01-03-2023",
+            "image": "http://dummyimage.com/256x157.png/5fa2dd/ffffff",
+            "avatar": "http://dummyimage.com/116x110.png/ff4444/ffffff",
+            "status": false,
+            "work_hours": 81,
+            "shift": false
+        },
+        {
+            "id": 4,
+            "title": "Dump Truck",
+            "description": "Drywall & Acoustical (MOB)",
+            "date": "24-02-2023",
+            "image": "http://dummyimage.com/251x157.png/5fa2dd/ffffff",
+            "avatar": "http://dummyimage.com/115x108.png/5fa2dd/ffffff",
+            "status": false,
+            "work_hours": 63,
+            "shift": true
+        },
+        {
+            "id": 5,
+            "title": "Bulldozer",
+            "description": "Construction Clean and Final Clean",
+            "date": "09-09-2022",
+            "image": "http://dummyimage.com/259x151.png/dddddd/000000",
+            "avatar": "http://dummyimage.com/113x117.png/dddddd/000000",
+            "status": false,
+            "work_hours": 26,
+            "shift": false
+        },
+        {
+            "id": 6,
+            "title": "Crawler",
+            "description": "Ornamental Railings",
+            "date": "10-06-2022",
+            "image": "http://dummyimage.com/252x157.png/dddddd/000000",
+            "avatar": "http://dummyimage.com/110x109.png/dddddd/000000",
+            "status": false,
+            "work_hours": 61,
+            "shift": false
+        },
+        {
+            "id": 7,
+            "title": "Trencher",
+            "description": "Temp Fencing, Decorative Fencing and Gates",
+            "date": "23-05-2022",
+            "image": "http://dummyimage.com/260x158.png/dddddd/000000",
+            "avatar": "http://dummyimage.com/108x105.png/dddddd/000000",
+            "status": true,
+            "work_hours": 20,
+            "shift": true
+        },
+        {
+            "id": 8,
+            "title": "Backhoe",
+            "description": "Curb & Gutter",
+            "date": "09-04-2023",
+            "image": "http://dummyimage.com/250x155.png/dddddd/000000",
+            "avatar": "http://dummyimage.com/113x110.png/cc0000/ffffff",
+            "status": false,
+            "work_hours": 16,
+            "shift": true
+        },
+        {
+            "id": 9,
+            "title": "Compactor",
+            "description": "Fire Sprinkler System",
+            "date": "18-07-2022",
+            "image": "http://dummyimage.com/253x157.png/cc0000/ffffff",
+            "avatar": "http://dummyimage.com/119x102.png/ff4444/ffffff",
+            "status": true,
+            "work_hours": 36,
+            "shift": false
+        },
+        {
+            "id": 10,
+            "title": "Skid-Steer",
+            "description": "Masonry",
+            "date": "19-03-2023",
+            "image": "http://dummyimage.com/250x152.png/ff4444/ffffff",
+            "avatar": "http://dummyimage.com/106x105.png/5fa2dd/ffffff",
+            "status": false,
+            "work_hours": 95,
+            "shift": true
+        },
+        {
+            "id": 11,
+            "title": "Dragline",
+            "description": "Elevator",
+            "date": "06-07-2022",
+            "image": "http://dummyimage.com/250x153.png/ff4444/ffffff",
+            "avatar": "http://dummyimage.com/117x115.png/5fa2dd/ffffff",
+            "status": false,
+            "work_hours": 39,
+            "shift": true
+        },
+        {
+            "id": 12,
+            "title": "Dragline",
+            "description": "RF Shielding",
+            "date": "21-06-2022",
+            "image": "http://dummyimage.com/252x160.png/5fa2dd/ffffff",
+            "avatar": "http://dummyimage.com/117x100.png/5fa2dd/ffffff",
+            "status": true,
+            "work_hours": 11,
+            "shift": true
+        },
+        {
+            "id": 13,
+            "title": "Compactor",
+            "description": "Prefabricated Aluminum Metal Canopies",
+            "date": "21-12-2022",
+            "image": "http://dummyimage.com/260x152.png/ff4444/ffffff",
+            "avatar": "http://dummyimage.com/101x109.png/ff4444/ffffff",
+            "status": false,
+            "work_hours": 19,
+            "shift": false
+        },
+        {
+            "id": 14,
+            "title": "Scraper",
+            "description": "Structural & Misc Steel Erection",
+            "date": "02-03-2023",
+            "image": "http://dummyimage.com/254x150.png/ff4444/ffffff",
+            "avatar": "http://dummyimage.com/108x100.png/ff4444/ffffff",
+            "status": true,
+            "work_hours": 89,
+            "shift": true
+        },
+        {
+            "id": 15,
+            "title": "Skid-Steer",
+            "description": "Drywall & Acoustical (MOB)",
+            "date": "26-09-2022",
+            "image": "http://dummyimage.com/251x154.png/5fa2dd/ffffff",
+            "avatar": "http://dummyimage.com/111x104.png/cc0000/ffffff",
+            "status": false,
+            "work_hours": 4,
+            "shift": false
+        },
+        {
+            "id": 16,
+            "title": "Excavator",
+            "description": "Ornamental Railings",
+            "date": "03-11-2022",
+            "image": "http://dummyimage.com/252x150.png/cc0000/ffffff",
+            "avatar": "http://dummyimage.com/111x114.png/cc0000/ffffff",
+            "status": false,
+            "work_hours": 25,
+            "shift": true
+        },
+        {
+            "id": 17,
+            "title": "Skid-Steer",
+            "description": "Drilled Shafts",
+            "date": "07-05-2022",
+            "image": "http://dummyimage.com/258x155.png/dddddd/000000",
+            "avatar": "http://dummyimage.com/102x107.png/cc0000/ffffff",
+            "status": true,
+            "work_hours": 73,
+            "shift": true
+        },
+        {
+            "id": 18,
+            "title": "Dragline",
+            "description": "Curb & Gutter",
+            "date": "10-02-2023",
+            "image": "http://dummyimage.com/254x153.png/cc0000/ffffff",
+            "avatar": "http://dummyimage.com/110x120.png/dddddd/000000",
+            "status": true,
+            "work_hours": 99,
+            "shift": false
+        },
+        {
+            "id": 19,
+            "title": "Backhoe",
+            "description": "Soft Flooring and Base",
+            "date": "24-12-2022",
+            "image": "http://dummyimage.com/257x151.png/cc0000/ffffff",
+            "avatar": "http://dummyimage.com/113x119.png/5fa2dd/ffffff",
+            "status": true,
+            "work_hours": 90,
+            "shift": false
+        },
+        {
+            "id": 20,
+            "title": "Compactor",
+            "description": "Fire Sprinkler System",
+            "date": "08-05-2022",
+            "image": "http://dummyimage.com/250x157.png/cc0000/ffffff",
+            "avatar": "http://dummyimage.com/115x107.png/5fa2dd/ffffff",
+            "status": false,
+            "work_hours": 78,
+            "shift": true
+        }
+    ]
 }

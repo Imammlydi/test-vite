@@ -1,9 +1,5 @@
 import React from "react";
-import {
-   
-    CardItem4,
-  
-} from "../components";
+import { CardItem4 } from "../components";
 export default function Home() {
     return (
         // <div className="  mx-auto px-4 pt-1 md:items-center md:px-8 lg:max-w-7xl mb-6  ">
