@@ -1,7 +1,7 @@
 import React from "react";
 import Button1 from "./Button1";
 
-const CardItem2 = ({ title, desc, image }) => {
+const CardItem2 = ({ title, desc, image,date }) => {
     const IcApprove = () => {
         return (
             <div className="absolute">
@@ -62,15 +62,27 @@ const CardItem2 = ({ title, desc, image }) => {
             </div>
         );
     };
+
+
+    const Avatar = ({ imageUrl, altText }) => {
+        return (
+          <div className="inline-block rounded-full overflow-hidden h-7 w-7 shadow-lg mx-1">
+            <img src={imageUrl} alt={altText} className="w-full h-full object-cover" />
+          </div>
+        );
+      };
+
+
     return (
         <div className="relative   max-w-sm overflow-hidden rounded bg-white shadow-lg">
             <IcApprove />
-            <img className="h-40 w-full" src={image} alt="new" />
-            <div class="px-6 py-4">
-                <div class="text-md mb-2 font-bold">{title}</div>
-                <p class="text-gray-700 text-base">{desc}</p>
+            <img className="h-40 w-full object-cover " src={image} alt="new" />
+            <div class="px-6 py-2">
+                <div class="text-md mb-0 font-bold font-Bitter">{title}</div>
+                <p class="text-gray-700 text-base font-Bitter">{desc}</p>
+                <p class="text-gray-700 text-base font-Bitter">{date}</p>
             </div>
-            <div class="flex flex-row-reverse px-3 pb-2 pt-1">
+            <div class="flex justify-between px-3 pb-2 pt-1">
                 {/* <span class="bg-gray-200 text-gray-700 mr-2 mb-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
                     #photography
                 </span>
@@ -80,6 +92,15 @@ const CardItem2 = ({ title, desc, image }) => {
                 {/* <button className="rounded border-none bg-primary py-2 px-4 font-bold text-textWhite hover:bg-textPrimary">
                     Button
                 </button> */}
+                <div className="flex items-center">
+
+                <Avatar imageUrl={"https://media.istockphoto.com/id/1423181290/id/foto/potret-headshot-wanita-muda-yang-serius-menatap-kamera-berpose-di-dalam-ruangan.jpg?s=612x612&w=0&k=20&c=sFeH7Heb93ju2Hj8_4Sf3Kmtfyf2-jZ-Q3bE01VVw04="} altText={"avatar"}/>
+                <div>
+
+                <h4 className="font-Bitter text-sm">Almira</h4>
+                
+                </div>
+                </div>
                 <Button1 Title={"Go"} href={"/detail_report"} />
             </div>
         </div>

@@ -10,7 +10,7 @@ module.exports = {
             textPrimary: "#24AFD2",
             textWhite: "#FFFFFF",
             textNotActive: "#85898A",
-            graydisable: "#dcdee3",
+            graydisable: "#d7d7d9",
             blue1: "#00AEEF",
             red1: "#ED1C24",
             yellow1: "#FFF200",
