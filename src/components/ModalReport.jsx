@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { createItem } from "../services";
+import { urlReport } from "../services/url";
 
 const ModalReport = () => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -27,7 +28,7 @@ const ModalReport = () => {
     };
 
     const sendData = () => {
-        // console.log("called", data);
+        console.log("called", data);
         createItem(data);
     };
 

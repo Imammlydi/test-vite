@@ -1,5 +1,5 @@
 import axios from "axios";
-import { urlReport } from "./url";
+import { urlAuthLogin, urlReport } from "./url";
 
 // Function to get all items
 export const getItems = async () => {
@@ -13,10 +13,38 @@ export const getItems = async () => {
 };
 
 // Function to create an item
-export const createItem = async (item) => {
+export const createItem = async ({ item }) => {
     try {
         const response = await axios.post(urlReport, item);
         return [response.data, window.location.reload()];
+    } catch (error) {
+        console.error("sdedwe", error);
+    }
+};
+export const createItemLogin = async ({ item }) => {
+    try {
+        const response = await axios.post(urlAuthLogin, item);
+        return console.log(response.data);
+    } catch (error) {
+        console.error(error, item);
+    }
+};
+
+//fetch
+export const fetchLogin = async ({ datas }) => {
+    try {
+        const response = await fetch(urlAuthLogin, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(datas),
+        });
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        console.log(data);
     } catch (error) {
         console.error(error);
     }

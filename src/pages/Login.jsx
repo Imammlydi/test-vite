@@ -1,8 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { BackButton } from "../components";
+import { createItem, createItemLogin, fetchLogin } from "../services";
+import { urlAuthLogin } from "../services/url";
 
 export default function Login() {
+    const initialFormState = {
+        // id: "",
+        email: "",
+        password: "",
+    };
+
+    const fetchLogin = async () => {
+        try {
+            const response = await fetch(urlAuthLogin, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            const datax = await response.json();
+            console.table(datax);
+            alert(datax);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const [data, setData] = useState(initialFormState);
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+
+        setData({ ...data, [name]: value });
+    };
+    const sendData = () => {
+        console.log("called", data);
+
+        fetchLogin(data);
+    };
+
+    const onSubmitData = (event) => {
+        event.preventDefault();
+        // seFetcReports(idInspector,datas)
+        console.log("called", data);
+    };
+
     const LoginForm = () => {
         return (
             <div class="w-full max-w-md rounded bg-white shadow-md">
@@ -11,7 +58,7 @@ export default function Login() {
                         Login
                     </h2>
                 </div>
-                <form class="mb-4   px-8 pb-8 pt-6 ">
+                <form class="mb-4   px-8 pb-8 pt-6 " onSubmit={onSubmitData}>
                     <div class="mb-4">
                         <label
                             class="text-gray-700 text-md mb-2 block font-Bitter "
@@ -21,9 +68,12 @@ export default function Login() {
                         </label>
                         <input
                             className="border-1 text-slate-50 focus:ring-sky-500 mb-3 w-full appearance-none   rounded border border-graydisable     px-3 py-2 font-Bitter leading-tight  focus:border-primary focus:outline-none focus:ring-1 "
-                            id="username"
-                            type="text"
-                            placeholder="Username"
+                            // id="email"
+                            type="email"
+                            name="email"
+                            value={data.email}
+                            placeholder="Email"
+                            onChange={handleInputChange}
                         />
                     </div>
                     <div class="mb-6">
@@ -35,9 +85,12 @@ export default function Login() {
                         </label>
                         <input
                             className="border-1 focus:ring-sky-900 mb-3 w-full appearance-none   rounded border   border-graydisable   px-3  py-2 font-Bitter leading-tight text-primary  focus:border-primary focus:outline-none focus:ring-1  "
-                            id="password"
+                            // id="password"
                             type="password"
+                            name="password"
+                            value={data.password}
                             placeholder="password"
+                            onChange={handleInputChange}
                         />
                         <p class="text-red-500 font-Bitter text-xs  italic">
                             Please choose a password.
@@ -47,6 +100,7 @@ export default function Login() {
                         <button
                             class="focus:shadow-outline rounded bg-primary px-4 py-2 font-Bitter font-bold text-white hover:bg-textPrimary  focus:outline-none"
                             type="button"
+                            onClick={sendData}
                         >
                             Sign In
                         </button>
