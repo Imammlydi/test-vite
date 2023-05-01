@@ -1,7 +1,7 @@
 import React from "react";
 import Button1 from "./Button1";
 
-const CardItem2 = ({ title, desc, image,date }) => {
+const CardItem2 = ({ title, desc, image, date }) => {
     const IcApprove = () => {
         return (
             <div className="absolute">
@@ -63,24 +63,26 @@ const CardItem2 = ({ title, desc, image,date }) => {
         );
     };
 
-
     const Avatar = ({ imageUrl, altText }) => {
         return (
-          <div className="inline-block rounded-full overflow-hidden h-7 w-7 shadow-lg mx-1">
-            <img src={imageUrl} alt={altText} className="w-full h-full object-cover" />
-          </div>
+            <div className="mx-1 inline-block h-7 w-7 overflow-hidden rounded-full shadow-lg">
+                <img
+                    src={imageUrl}
+                    alt={altText}
+                    className="h-full w-full object-cover"
+                />
+            </div>
         );
-      };
-
+    };
 
     return (
         <div className="relative   max-w-sm overflow-hidden rounded bg-white shadow-lg">
             <IcApprove />
             <img className="h-40 w-full object-cover " src={image} alt="new" />
             <div class="px-6 py-2">
-                <div class="text-md mb-0 font-bold font-Bitter">{title}</div>
-                <p class="text-gray-700 text-base font-Bitter">{desc}</p>
-                <p class="text-gray-700 text-base font-Bitter">{date}</p>
+                <div class="text-md mb-0 font-Bitter font-bold">{title}</div>
+                <p class="text-gray-700 font-Bitter text-base">{desc}</p>
+                <p class="text-gray-700 font-Bitter text-base">{date}</p>
             </div>
             <div class="flex justify-between px-3 pb-2 pt-1">
                 {/* <span class="bg-gray-200 text-gray-700 mr-2 mb-2 inline-block rounded-full px-2 py-1 text-sm font-semibold">
@@ -93,13 +95,15 @@ const CardItem2 = ({ title, desc, image,date }) => {
                     Button
                 </button> */}
                 <div className="flex items-center">
-
-                <Avatar imageUrl={"https://media.istockphoto.com/id/1423181290/id/foto/potret-headshot-wanita-muda-yang-serius-menatap-kamera-berpose-di-dalam-ruangan.jpg?s=612x612&w=0&k=20&c=sFeH7Heb93ju2Hj8_4Sf3Kmtfyf2-jZ-Q3bE01VVw04="} altText={"avatar"}/>
-                <div>
-
-                <h4 className="font-Bitter text-sm">Almira</h4>
-                
-                </div>
+                    <Avatar
+                        imageUrl={
+                            "https://media.istockphoto.com/id/1423181290/id/foto/potret-headshot-wanita-muda-yang-serius-menatap-kamera-berpose-di-dalam-ruangan.jpg?s=612x612&w=0&k=20&c=sFeH7Heb93ju2Hj8_4Sf3Kmtfyf2-jZ-Q3bE01VVw04="
+                        }
+                        altText={"avatar"}
+                    />
+                    <div>
+                        <h4 className="font-Bitter text-sm">Almira</h4>
+                    </div>
                 </div>
                 <Button1 Title={"Go"} href={"/detail_report"} />
             </div>

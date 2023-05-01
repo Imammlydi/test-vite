@@ -12,7 +12,7 @@ const BottomNavbar = () => {
 
     const Home = () => {
         return (
-            <div  className="flex justify-center">
+            <div className="flex justify-center">
                 {url === "/" ? (
                     <svg
                         width="18"
@@ -45,7 +45,7 @@ const BottomNavbar = () => {
     };
     const Report = () => {
         return (
-            <div  className="flex justify-center">
+            <div className="flex justify-center">
                 {url === "/report" ? (
                     <svg
                         width="18"
@@ -78,8 +78,8 @@ const BottomNavbar = () => {
     };
     const Profile = () => {
         return (
-            <div  className="flex justify-center">
-        {url === "/gallery" ? (
+            <div className="flex justify-center">
+                {url === "/gallery" ? (
                     <svg
                         width="20"
                         height="20"
@@ -106,7 +106,6 @@ const BottomNavbar = () => {
                         />
                     </svg>
                 )}
-                       
             </div>
         );
     };
@@ -117,15 +116,39 @@ const BottomNavbar = () => {
                 <div className="flex justify-between px-6 ">
                     <Link to={"/"} className="p-4 ">
                         <Home />
-                        <h5 className={url === "/" ? "font-Bitter font-bold text-blue1 text-xs text-center mt-1" : "font-Bitter font-bold text-graydisable text-xs text-center mt-1"}>Home</h5>
+                        <h5
+                            className={
+                                url === "/"
+                                    ? "mt-1 text-center font-Bitter text-xs font-bold text-blue1"
+                                    : "mt-1 text-center font-Bitter text-xs font-bold text-graydisable"
+                            }
+                        >
+                            Home
+                        </h5>
                     </Link>
                     <Link to={"/report"} className="p-4">
                         <Report />
-                        <h5 className={url === "/report" ? "font-Bitter font-bold text-blue1 text-xs text-center mt-1" : "font-Bitter font-bold text-graydisable text-xs text-center mt-1"}>Report</h5>
+                        <h5
+                            className={
+                                url === "/report"
+                                    ? "mt-1 text-center font-Bitter text-xs font-bold text-blue1"
+                                    : "mt-1 text-center font-Bitter text-xs font-bold text-graydisable"
+                            }
+                        >
+                            Report
+                        </h5>
                     </Link>
                     <Link to={"/gallery"} className="p-4">
                         <Profile />
-                        <h5 className={url === "/gallery" ? "font-Bitter font-bold text-blue1 text-xs text-center mt-1" : "font-Bitter font-bold text-graydisable text-xs text-center mt-1"}>Profile</h5>
+                        <h5
+                            className={
+                                url === "/gallery"
+                                    ? "mt-1 text-center font-Bitter text-xs font-bold text-blue1"
+                                    : "mt-1 text-center font-Bitter text-xs font-bold text-graydisable"
+                            }
+                        >
+                            Profile
+                        </h5>
                     </Link>
                 </div>
             </div>

@@ -124,11 +124,6 @@ export default function Report() {
         );
     };
 
-
-   
-      
-
-
     return (
         <>
             <div className="fllex mx-auto  grid grid-cols-1 gap-4 px-4 pt-8 md:grid-cols-3 md:px-8  lg:max-w-7xl lg:grid-cols-3 lg:gap-1">
