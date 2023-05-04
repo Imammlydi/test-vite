@@ -111,48 +111,56 @@ const BottomNavbar = () => {
     };
 
     return (
-        <nav className="fixed bottom-0 left-0 z-10 w-full bg-white shadow-lg">
-            <div className="mx-auto max-w-screen-lg bg-white px-4 shadow">
-                <div className="flex justify-between px-6 ">
-                    <Link to={"/"} className="p-4 ">
-                        <Home />
-                        <h5
-                            className={
-                                url === "/"
-                                    ? "mt-1 text-center font-Bitter text-xs font-bold text-blue1"
-                                    : "mt-1 text-center font-Bitter text-xs font-bold text-graydisable"
-                            }
-                        >
-                            Home
-                        </h5>
-                    </Link>
-                    <Link to={"/report"} className="p-4">
-                        <Report />
-                        <h5
-                            className={
-                                url === "/report"
-                                    ? "mt-1 text-center font-Bitter text-xs font-bold text-blue1"
-                                    : "mt-1 text-center font-Bitter text-xs font-bold text-graydisable"
-                            }
-                        >
-                            Report
-                        </h5>
-                    </Link>
-                    <Link to={"/gallery"} className="p-4">
-                        <Profile />
-                        <h5
-                            className={
-                                url === "/gallery"
-                                    ? "mt-1 text-center font-Bitter text-xs font-bold text-blue1"
-                                    : "mt-1 text-center font-Bitter text-xs font-bold text-graydisable"
-                            }
-                        >
-                            Profile
-                        </h5>
-                    </Link>
-                </div>
-            </div>
-        </nav>
+        <>
+            {/* {location.pathname !== "/login"  && <Navbar />} */}
+            {location.pathname !== "/login" &&
+            location.pathname !== "/detail_report" ? (
+                // && width >= 768 && width >= 1024
+
+                <nav className="fixed bottom-0 left-0 z-10 w-full bg-white shadow-lg">
+                    <div className="mx-auto max-w-screen-lg bg-white px-4 shadow">
+                        <div className="flex justify-between px-6 ">
+                            <Link to={"/"} className="p-4 ">
+                                <Home />
+                                <h5
+                                    className={
+                                        url === "/"
+                                            ? "mt-1 text-center font-Bitter text-xs font-bold text-blue1"
+                                            : "mt-1 text-center font-Bitter text-xs font-bold text-graydisable"
+                                    }
+                                >
+                                    Home
+                                </h5>
+                            </Link>
+                            <Link to={"/report"} className="p-4">
+                                <Report />
+                                <h5
+                                    className={
+                                        url === "/report"
+                                            ? "mt-1 text-center font-Bitter text-xs font-bold text-blue1"
+                                            : "mt-1 text-center font-Bitter text-xs font-bold text-graydisable"
+                                    }
+                                >
+                                    Report
+                                </h5>
+                            </Link>
+                            <Link to={"/gallery"} className="p-4">
+                                <Profile />
+                                <h5
+                                    className={
+                                        url === "/gallery"
+                                            ? "mt-1 text-center font-Bitter text-xs font-bold text-blue1"
+                                            : "mt-1 text-center font-Bitter text-xs font-bold text-graydisable"
+                                    }
+                                >
+                                    Profile
+                                </h5>
+                            </Link>
+                        </div>
+                    </div>
+                </nav>
+            ) : null}
+        </>
     );
 };
 

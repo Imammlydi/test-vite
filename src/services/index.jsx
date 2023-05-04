@@ -50,6 +50,23 @@ export const fetchLogin = async ({ datas }) => {
     }
 };
 
+export async function fetchDataWithJWT(url, tokenx) {
+    try {
+        const response = await fetch(url, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                auth_token: tokenx,
+            },
+        });
+        //   const data = await response.json();
+        return await response.json();
+        console.log(data.data);
+    } catch (error) {
+        console.error("There was a problem with the fetch operation:", error);
+    }
+}
+
 // Function to update an item
 export const updateItem = async (itemId, updatedItem) => {
     try {

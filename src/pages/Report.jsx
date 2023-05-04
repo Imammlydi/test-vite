@@ -11,21 +11,26 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import dummydata from "../assets/dummydata/dummy.json";
 import Modal from "react-modal";
-import { getItems } from "../services";
+import { fetchDataWithJWT, getItems } from "../services";
 import ReactLoading from "react-loading";
+import { dummyImageConstrution, urlGetAllReport } from "../services/url";
+import jwt_decode from "jwt-decode";
+import { Link, NavLink, Navigate, useNavigate } from "react-router-dom";
 
 export default function Report() {
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState("");
     const [datesearchTerm, setDateSearchTerm] = useState();
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(10);
     const [data, setData] = useState([]);
-
+    const [token, seToken] = useState(null);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     // Get current posts
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
+    // const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
 
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -77,16 +82,28 @@ export default function Report() {
             />
         ));
 
-    const fetchItems = async () => {
-        const itemsData = await getItems();
-        setData(itemsData);
-        // console.log(itemsData)
-    };
+    const exp = localStorage.getItem("exp");
 
     useEffect(() => {
-        fetchItems();
-        // console.log(data)
-    }, []);
+        const tokens = localStorage.getItem("token");
+
+        seToken(tokens);
+
+        fetchDataWithJWT(urlGetAllReport, token)
+            .then((x) => {
+                return (
+                    setData(x.data),
+                    console.table(x.data[0].image[0].imageUrl),
+                    console.log(x)
+                );
+            })
+            .catch((err) => {
+                console.log(err, "------------------");
+                // localStorage.removeItem("token");
+                // navigate('/login');
+            });
+        // console.log(data,'---')
+    }, [token, exp]);
 
     const Search = () => {
         return (
@@ -150,9 +167,9 @@ export default function Report() {
                     </TabList>
 
                     <TabPanel>
-                        {currentPosts.length >= 1 ? (
+                        {data.length >= 1 ? (
                             <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
-                                {currentPosts
+                                {data
                                     .filter(toSearch(searchTerm))
                                     .map((x, idx) => (
                                         <CardItem2
@@ -171,12 +188,16 @@ export default function Report() {
                                                       ) + "....."
                                                     : x.description
                                             }
-                                            image={x.image}
+                                            image={dummyImageConstrution}
+                                            // image={`http://192.168.225.73:5000/${x.image[0]}`}
+                                            // image={`http://localhost:5000/${x.image[0].imageUrl}`}
                                             date={x.tanggal}
                                         />
                                     ))}
                             </div>
                         ) : (
+                            // :data=== null ? (<Navigate to="/login" replace />)
+                            // <Navigate to="/login" replace />
                             <div className="mt-5 flex justify-center">
                                 <ReactLoading
                                     type={"spin"}
@@ -186,11 +207,11 @@ export default function Report() {
                                 />
                             </div>
                         )}
-                        <Pagination
+                        {/* <Pagination
                             postsPerPage={postsPerPage}
                             totalPosts={dummydata.length}
                             paginate={paginate}
-                        />
+                        /> */}
                     </TabPanel>
                     <TabPanel>
                         <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
