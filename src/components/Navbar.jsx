@@ -38,7 +38,7 @@ export default function Navbar() {
         //     </Case>
         // </div>
 
-        <nav className="sticky top-0 w-full w-screen bg-white  shadow ">
+        <nav className="relative sticky top-0 z-10 w-full w-screen bg-white  shadow ">
             {width >= 1024 ? (
                 <div className="mx-auto justify-between px-4 md:flex md:items-center md:px-8 lg:max-w-7xl   ">
                     <div>

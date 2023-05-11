@@ -1,5 +1,5 @@
 import axios from "axios";
-import { urlAuthLogin, urlReport } from "./url";
+import { urlAuthLogin, urlPostReport, urlReport } from "./url";
 
 // Function to get all items
 export const getItems = async () => {
@@ -43,6 +43,64 @@ export const fetchLogin = async ({ datas }) => {
         if (!response.ok) {
             throw new Error("Network response was not ok");
         }
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+};
+export const fetchCreateReport = async ({ datax }) => {
+    const aa = {
+        title: "ee",
+        description: "ee",
+        shift: "rrr",
+        tanggal: "2023-05-12",
+    };
+    try {
+        const response = await fetch(urlPostReport, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(datax),
+        });
+
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+};
+export const fetchCreateReportWorker = async ({ datax, idReport }) => {
+    try {
+        const response = await fetch(
+            `http://localhost:5000/report/report/worker/${idReport}`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(datax),
+            }
+        );
+
+        const data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+};
+export const fetchGetReportById = async ({ idReport }) => {
+    try {
+        const response = await fetch(
+            `http://localhost:5000/report/viewReport/${idReport}`,
+            {
+                // headers: {
+                //     "Content-Type": "application/json",
+                // },
+            }
+        );
+
         const data = await response.json();
         console.log(data);
     } catch (error) {

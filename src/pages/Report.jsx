@@ -128,11 +128,11 @@ export default function Report() {
         );
     };
 
-    const Button3 = ({ title, onClick }) => {
+    const ButtonFAB = ({ title, onClick }) => {
         return (
             <div>
                 <button
-                    className="rounded border-none bg-primary px-4 py-2 font-bold text-textWhite hover:bg-textPrimary"
+                    className="bottom-50 right-50 absolute rounded border-none bg-primary px-4 py-2 font-bold text-textWhite hover:bg-textPrimary"
                     onClick={onClick}
                 >
                     {title}
@@ -143,37 +143,96 @@ export default function Report() {
 
     return (
         <>
-            <div className="fllex mx-auto  grid grid-cols-1 gap-4 px-4 pt-8 md:grid-cols-3 md:px-8  lg:max-w-7xl lg:grid-cols-3 lg:gap-1">
-                {/* <Button3 title={"Input "} onClick={openModal} /> */}
-                <ModalReport />
-                <div />
-                {/* <Button3 title={"a"} onClick={()=>{ console.log(data)}}/> */}
-                <Search />
-                {/* <ReactLoading type={"spin"} color={"#00AEEF"} height={50} width={60} /> */}
-            </div>
+            <div className="relative">
+                {/* <ButtonFAB title={"click"}/> */}
+                <div className="fllex relative  mx-auto grid grid-cols-1 gap-4 px-4 pt-8 md:grid-cols-3  md:px-8 lg:max-w-7xl lg:grid-cols-3 lg:gap-1 ">
+                    {/* <Button3 title={"Input "} onClick={openModal} /> */}
+                    <ModalReport />
+                    <div />
+                    {/* <Button3 title={"a"} onClick={()=>{ console.log(data)}}/> */}
+                    <Search />
+                    {/* <ReactLoading type={"spin"} color={"#00AEEF"} height={50} width={60} /> */}
+                </div>
 
-            <div className="mx-auto  px-4 pt-8 md:px-8 lg:max-w-7xl  ">
-                <Tabs>
-                    <TabList>
-                        <Tab>
-                            <h4 className="font-Bitter">Input</h4>
-                        </Tab>
-                        <Tab>
-                            <h4 className="font-Bitter">Approved</h4>
-                        </Tab>
-                        <Tab>
-                            <h4 className="font-Bitter">Disapproved</h4>
-                        </Tab>
-                    </TabList>
+                <div className="mx-auto  px-4 pt-8 md:px-8 lg:max-w-7xl  ">
+                    <Tabs>
+                        <TabList>
+                            <Tab>
+                                <h4 className="font-Bitter">Input</h4>
+                            </Tab>
+                            <Tab>
+                                <h4 className="font-Bitter">Approved</h4>
+                            </Tab>
+                            <Tab>
+                                <h4 className="font-Bitter">Disapproved</h4>
+                            </Tab>
+                        </TabList>
 
-                    <TabPanel>
-                        {data.length >= 1 ? (
+                        <TabPanel>
+                            {data.length >= 1 ? (
+                                <div class="relative mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
+                                    {/* <ButtonFAB title={"click"}/> */}
+                                    {data
+                                        .filter(toSearch(searchTerm))
+                                        .map((x, idx) => (
+                                            <CardItem2
+                                                key={idx}
+                                                title={
+                                                    x.title.length > 17
+                                                        ? x.title.substring(
+                                                              0,
+                                                              17
+                                                          ) + "....."
+                                                        : x.title
+                                                }
+                                                desc={
+                                                    x.description.length > 29
+                                                        ? x.description.substring(
+                                                              0,
+                                                              18
+                                                          ) + "....."
+                                                        : x.description
+                                                }
+                                                image={dummyImageConstrution}
+                                                // image={`http://192.168.225.73:5000/${x.image[0]}`}
+                                                // image={`http://localhost:5000/${x.image[0].imageUrl}`}
+                                                date={x.tanggal}
+                                                href={"/detail_report"}
+                                                state={x.id}
+                                                // href={{
+                                                //     pathname: "/detail_report" ,
+                                                //     state: x.id
+                                                //  }}
+                                                // href={{
+                                                //     pathname: "/detail_report" ,
+                                                //     state: x.id
+                                                //  }}
+                                            />
+                                        ))}
+                                </div>
+                            ) : (
+                                // :data=== null ? (<Navigate to="/login" replace />)
+                                // <Navigate to="/login" replace />
+                                <div className="mt-5 flex justify-center">
+                                    <ReactLoading
+                                        type={"spin"}
+                                        color={"#00AEEF"}
+                                        height={50}
+                                        width={60}
+                                    />
+                                </div>
+                            )}
+                            {/* <Pagination
+                            postsPerPage={postsPerPage}
+                            totalPosts={dummydata.length}
+                            paginate={paginate}
+                        /> */}
+                        </TabPanel>
+                        <TabPanel>
                             <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
-                                {data
-                                    .filter(toSearch(searchTerm))
-                                    .map((x, idx) => (
+                                {dummydata.map((x) => {
+                                    return (
                                         <CardItem2
-                                            key={idx}
                                             title={
                                                 x.title.length > 17
                                                     ? x.title.substring(0, 17) +
@@ -184,64 +243,21 @@ export default function Report() {
                                                 x.description.length > 29
                                                     ? x.description.substring(
                                                           0,
-                                                          18
+                                                          29
                                                       ) + "....."
                                                     : x.description
                                             }
-                                            image={dummyImageConstrution}
-                                            // image={`http://192.168.225.73:5000/${x.image[0]}`}
-                                            // image={`http://localhost:5000/${x.image[0].imageUrl}`}
-                                            date={x.tanggal}
+                                            image={x.image}
                                         />
-                                    ))}
+                                    );
+                                })}
                             </div>
-                        ) : (
-                            // :data=== null ? (<Navigate to="/login" replace />)
-                            // <Navigate to="/login" replace />
-                            <div className="mt-5 flex justify-center">
-                                <ReactLoading
-                                    type={"spin"}
-                                    color={"#00AEEF"}
-                                    height={50}
-                                    width={60}
-                                />
-                            </div>
-                        )}
-                        {/* <Pagination
-                            postsPerPage={postsPerPage}
-                            totalPosts={dummydata.length}
-                            paginate={paginate}
-                        /> */}
-                    </TabPanel>
-                    <TabPanel>
-                        <div class="mx-auto grid grid-cols-1 gap-4 px-4 pt-1 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-5 lg:gap-2">
-                            {dummydata.map((x) => {
-                                return (
-                                    <CardItem2
-                                        title={
-                                            x.title.length > 17
-                                                ? x.title.substring(0, 17) +
-                                                  "....."
-                                                : x.title
-                                        }
-                                        desc={
-                                            x.description.length > 29
-                                                ? x.description.substring(
-                                                      0,
-                                                      29
-                                                  ) + "....."
-                                                : x.description
-                                        }
-                                        image={x.image}
-                                    />
-                                );
-                            })}
-                        </div>
-                    </TabPanel>
-                    <TabPanel>
-                        <h2>Any content 3</h2>
-                    </TabPanel>
-                </Tabs>
+                        </TabPanel>
+                        <TabPanel>
+                            <h2>Any content 3</h2>
+                        </TabPanel>
+                    </Tabs>
+                </div>
             </div>
         </>
     );

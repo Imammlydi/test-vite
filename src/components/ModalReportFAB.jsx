@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
-import { createItem, fetchCreateReport } from "../services";
-import { urlPostReport, urlReport } from "../services/url";
+import { createItem } from "../services";
+import { urlReport } from "../services/url";
 
-const ModalReport = () => {
+const ModalReportFAB = () => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
     const initialFormState = {
@@ -12,7 +12,7 @@ const ModalReport = () => {
         description: "",
         shift: "",
         tanggal: "",
-        // image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     };
 
     const [data, setData] = useState(initialFormState);
@@ -27,29 +27,9 @@ const ModalReport = () => {
         console.log("called", data);
     };
 
-    const fetchCreateReport = async () => {
-        try {
-            const response = await fetch(urlPostReport, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-
-            const datas = await response.json();
-            console.log(datas);
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
     const sendData = () => {
-        // createItem(data);
-        const newData = JSON.stringify(data);
         console.log("called", data);
-        fetchCreateReport(data);
-        // fetchCreateReport()
+        createItem(data);
     };
 
     const customStyles = {
@@ -86,7 +66,7 @@ const ModalReport = () => {
         return (
             <div>
                 <button
-                    className="rounded border-none bg-primary px-4 py-2 font-bold text-textWhite hover:bg-textPrimary"
+                    className="rounded-full border-none bg-primary px-4 py-2 font-bold text-textWhite hover:bg-textPrimary"
                     onClick={onClick}
                 >
                     {title}
@@ -94,12 +74,44 @@ const ModalReport = () => {
             </div>
         );
     };
-
-    useEffect(() => {}, []);
+    const Button4 = ({ title, onClick }) => {
+        return (
+            <div>
+                <button
+                    className="absolute -top-20 right-10 rounded-full border-none bg-primary px-4 py-2 font-bold text-textWhite hover:bg-textPrimary"
+                    onClick={onClick}
+                >
+                    {title}
+                </button>
+            </div>
+        );
+    };
+    const Form = () => {
+        return (
+            <form class="mb-4    pt-1 " onSubmit={onSubmitData}>
+                {/* <div class="mb-1"> */}
+                <input
+                    className="border-1 text-slate-50 focus:ring-sky-500  appearance-none rounded   border border-graydisable px-3     py-3 font-Bitter leading-tight focus:border-primary  focus:outline-none focus:ring-1 lg:max-w-5xl "
+                    type="text"
+                    placeholder="title"
+                    name="title"
+                    value={data.title}
+                    onChange={handleInputChange}
+                />
+                <button
+                    class="focus:shadow-outline ml-2 rounded bg-primary px-4 py-2 font-Bitter font-bold text-white hover:bg-textPrimary  focus:outline-none"
+                    type="submit"
+                >
+                    search
+                </button>
+                {/* </div> */}
+            </form>
+        );
+    };
 
     return (
         <>
-            <Button3 title={"Input "} onClick={openModal} />
+            <Button4 title={"Input "} onClick={openModal} />
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
@@ -165,4 +177,4 @@ const ModalReport = () => {
     );
 };
 
-export default ModalReport;
+export default ModalReportFAB;

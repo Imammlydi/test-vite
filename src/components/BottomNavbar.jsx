@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import ModalReportFAB from "./ModalReportFAB";
 
 const BottomNavbar = () => {
     const [url, setUrl] = useState(null);
@@ -9,6 +10,19 @@ const BottomNavbar = () => {
         setUrl(location.pathname);
         console.log(url);
     }, [location]);
+
+    const ButtonFAB = ({ title, onClick }) => {
+        return (
+            <div>
+                <button
+                    className="absolute -top-20 left-20 rounded border-none bg-primary px-4 py-2 font-bold text-textWhite hover:bg-textPrimary"
+                    onClick={onClick}
+                >
+                    {title}
+                </button>
+            </div>
+        );
+    };
 
     const Home = () => {
         return (
@@ -45,7 +59,7 @@ const BottomNavbar = () => {
     };
     const Report = () => {
         return (
-            <div className="flex justify-center">
+            <div className="flex justify-center ">
                 {url === "/report" ? (
                     <svg
                         width="18"
@@ -117,8 +131,9 @@ const BottomNavbar = () => {
             location.pathname !== "/detail_report" ? (
                 // && width >= 768 && width >= 1024
 
-                <nav className="fixed bottom-0 left-0 z-10 w-full bg-white shadow-lg">
-                    <div className="mx-auto max-w-screen-lg bg-white px-4 shadow">
+                <nav className="fixed bottom-0 left-0 z-10 w-full bg-white shadow-lg ">
+                    <div className="relative mx-auto max-w-screen-lg bg-white px-4 shadow">
+                        {/* {  url === "/report" &&<ModalReportFAB/>} */}
                         <div className="flex justify-between px-6 ">
                             <Link to={"/"} className="p-4 ">
                                 <Home />

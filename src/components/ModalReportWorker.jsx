@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { createItem, fetchCreateReport } from "../services";
 import { urlPostReport, urlReport } from "../services/url";
 
-const ModalReport = () => {
+const ModalReportWorker = () => {
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
     const initialFormState = {
@@ -86,10 +86,21 @@ const ModalReport = () => {
         return (
             <div>
                 <button
-                    className="rounded border-none bg-primary px-4 py-2 font-bold text-textWhite hover:bg-textPrimary"
+                    className="rounded border-none bg-white px-4 py-2 text-xs font-bold text-textWhite hover:bg-blue1"
                     onClick={onClick}
                 >
-                    {title}
+                    <svg
+                        width="19"
+                        height="19"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M16.3 6.175L12.05 1.975L13.45 0.575C13.8333 0.191667 14.3043 0 14.863 0C15.4217 0 15.8923 0.191667 16.275 0.575L17.675 1.975C18.0583 2.35833 18.2583 2.821 18.275 3.363C18.2917 3.905 18.1083 4.36733 17.725 4.75L16.3 6.175ZM14.85 7.65L4.25 18.25H0V14L10.6 3.4L14.85 7.65Z"
+                            fill="#479F55"
+                        />
+                    </svg>
                 </button>
             </div>
         );
@@ -165,4 +176,4 @@ const ModalReport = () => {
     );
 };
 
-export default ModalReport;
+export default ModalReportWorker;

@@ -1,7 +1,7 @@
 import React from "react";
 import Button1 from "./Button1";
 
-const CardItem2 = ({ title, desc, image, date }) => {
+const CardItem2 = ({ title, desc, image, date, href, state }) => {
     const IcApprove = () => {
         return (
             <div className="absolute">
@@ -105,7 +105,7 @@ const CardItem2 = ({ title, desc, image, date }) => {
                         <h4 className="font-Bitter text-sm">Almira</h4>
                     </div>
                 </div>
-                <Button1 Title={"Go"} href={"/detail_report"} />
+                <Button1 Title={"Go"} href={href} state={state} />
             </div>
         </div>
     );
