@@ -1,4 +1,4 @@
-const IP = "192.168.1.11";
+const IP = "localhost";
 
 const url = `http://${IP}:8000/reports`;
 

@@ -144,3 +144,45 @@ export const deleteItem = async (itemId) => {
         console.error(error);
     }
 };
+
+export function formatUang(uang) {
+    // if(uang.length>0){
+    //     return uang
+    // }else{
+    //     return "loading"
+    // }
+
+    var uangString = uang.toString(); // Mengubah angka menjadi string
+    var splitUang = uangString.split("."); // Memisahkan bagian desimal
+
+    var uangFormatted = splitUang[0]; // Bagian uang sebelum desimal
+
+    var length = uangFormatted.length;
+
+    if (length <= 3) {
+        return uangFormatted; // Mengembalikan uang asli jika panjangnya kurang dari atau sama dengan 3
+    }
+
+    var formattedUang = "";
+    var counter = 0;
+
+    // Membalikkan string uang agar dapat memproses dari belakang
+    uangFormatted = uangFormatted.split("").reverse().join("");
+
+    for (var i = 0; i < length; i++) {
+        formattedUang += uangFormatted[i];
+
+        // Menambahkan tanda titik setiap 3 digit
+        if (i !== length - 1 && counter === 2) {
+            formattedUang += ".";
+            counter = 0;
+        } else {
+            counter++;
+        }
+    }
+
+    // Membalikkan kembali string uang setelah diformat
+    formattedUang = formattedUang.split("").reverse().join("");
+
+    return formattedUang;
+}

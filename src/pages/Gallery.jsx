@@ -1,15 +1,25 @@
 import React, { useEffect } from "react";
 import Case from "../components/Case";
-import { CardItem4 } from "../components";
+import { BackButton, CardItem4 } from "../components";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { useNavigate } from "react-router-dom";
 
 export default function Gallery() {
+    const navigate = useNavigate();
+
+    const goBack = () => {
+        navigate(-1); // Navigates back to the previous page
+    };
+    const inspector = localStorage.getItem("inspec");
+    const engineer = localStorage.getItem("engineer");
     const width = window.innerWidth;
     const urlavatar =
-        "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZSUyMHBob3RvfGVufDB8fDB8fA%3D%3D&w=1000&q=80";
+        "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAH0AfQMBIgACEQEDEQH/xAAbAAEAAwADAQAAAAAAAAAAAAAABAUGAQIDB//EADcQAAICAQICBggEBgMAAAAAAAABAgMRBAUSIQYTMUFRYSIyUnGBkaHBQnKx0RRigpLh8BUjNP/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD7OAAAAAAHnfdXp6Z3XTUK4rLbA9DicowjxTaivFvBldZ0lttujHTxdOn4lxSWHNx78dyIW8bvbuTVaj1dEXlQzlt+LYG4812A+faLcdXoZJ6e5qPfCXOL+BtNo3GvctP1kFw2ReLIZzwv9gJoAAAAAAAAAAAADiUowhKc2oxistvsSMbv28rcGqKItUQlnifbN+OPAtOl2rdWlr00Hh2tuX5V3fP9DKRi5SUYJyk3hJd4HALnTbDOcVLU28GfwwWX8yUth0i7ZXP+pfsBnCXt+v1G3WddQ1iaw1JZUki6jsejT59Y/JyK/pBTCq3TxriowVeEkuS5/wCQNPtO6VblS5QXBbD16284814onmA2jVvR7jTapNRcuGf5X/ufgb8AAAAAAAAAAAMj0xz/AMhQu7qeX9zOvRzTRlx6mS5p8MM/UldM6/8Ay3J+1F/Rr7nrsceHbav5m39QJwAAFZv+md2jVkVmVL4vh3lmAMP7u0+lR9VZ7cGEv0sFvK01axB2xSXgng3gAAAAAAAAAAAUfSarrdJZj8CU18O36ZOu0ctt0/5fuWe4VKcXxLMZJxkRaq41VxrgsRjFJLyA7AAAAAKSql2dIrZNcqlxfHCS/X6Gth6kfcVdNEP4iUox9OzCk/HBagAAAAAAAAAAAaTWGsor7Y8Nso+DLAjayHLrF3cmBFAAAA7Vw6yxRT7QJelglUpYWXzyewSSWEAAAAAAAAAABxOca48VklGPjJ4QHJXazX09ctHD05y5Sa7Inhuu7whV1ejsUrJcnOPZFeXmUmhnGvV1ym8RT7WBdO11PFibj3SX3O6uqf40dmlJYaTTI9mkT9R48mB3s1VcV6OZPyI9Wv8A4bUK61OUfVxHuQelsXs/Mi6+DqhGMpLib5RQGoptrvrVlUlKEuxo7mS2vXy0V/Nt0yfpx+6NRTqaNQs02wn5Rf2A9QAAAAAjazXafRx/7p+l3QjzbIm9bk9KlTRjrZLLl7K/czUpOUnKTcpN5bby2Ba6rfb7G1p4qqPj2yKy22y6XFbOU34yeToAAAAlaXXW6dpP06/Zfd7i5ouhfWp1vKM4SNLqJURtin68eXkwJ2t3Hgk66Oclycn3e4qpSc5OUm232tnAAHKeHlcmu9HAAn6bdtZRhdZ1kfZs5/XtLfSb3p78RuXUz8+cfmZkAbpc1lc15Aye3bldopKOXOnPODfZ7vA1NNsL6o21PihJZTAym8Scty1Ge6WPoiGTd5WNzv8ANp/REIAAAAAAAAAAAAAAAAAaTo1Jy0lkH+CfLyyjNmi6MctNc+92fYD/2Q==";
     useEffect(() => {
-        console.log(width);
-    }, []);
+        console.log(width, JSON.parse(inspector)[0].name);
+        console.log(JSON.parse(inspector)[0]);
+        console.log(engineer, "]]]");
+    }, [inspector, engineer]);
 
     const Avatar = ({ imageUrl, altText }) => {
         return (
@@ -26,62 +36,88 @@ export default function Gallery() {
     const DekstopView = () => {
         return (
             <>
-                <div class="grid grid-cols-3 ">
-                    <div class="">
-                        <Avatar imageUrl={urlavatar} altText={"avatar"} />
-                        <div className="mt-10">
-                            <div className="my-2">
-                                <h5 className="text-black font-Bitter text-lg font-bold">
-                                    Address
-                                </h5>
-
-                                <h5 className="font-Bitter  text-lg text-graydisable2">
-                                    Jalan Bagu no 5, Jakarta
-                                </h5>
-                            </div>
-
-                            <div className="my-2">
-                                <h5 className="text-black font-Bitter text-lg font-bold">
-                                    Contact
-                                </h5>
-
-                                <h5 className="font-Bitter  text-lg text-graydisable2">
-                                    55320520
-                                </h5>
-                            </div>
-                        </div>
+                <div className="min-h-screen  w-full">
+                    <div className="  mx-auto py-5 pl-2 md:pl-4 lg:pl-5 xl:pl-5 ">
+                        <BackButton href={"/report"} onclick={goBack} />
                     </div>
-                    <div class="col-span-2">
-                        <div className="my-2">
-                            <h5 className="text-black font-Bitter text-lg font-bold">
-                                Jemy Feguson
-                            </h5>
+                    <div className="  grid grid-cols-3 ">
+                        <div className=" ">
+                            <Avatar imageUrl={urlavatar} altText={"avatar"} />
+                            {/* <div className="mt-10">
+                                <div className="my-2">
+                                    <h5 className="text-black font-Bitter text-lg font-bold">
+                                        Address
+                                    </h5>
 
-                            <h5 className="text-black  font-Bitter text-lg">
-                                Civil Engineer
-                            </h5>
+                                    <h5 className="font-Bitter  text-lg text-graydisable2">
+                                        Jalan Bagu no 5, Jakarta
+                                    </h5>
+                                </div>
+
+                                <div className="my-2">
+                                    <h5 className="text-black font-Bitter text-lg font-bold">
+                                        Contact
+                                    </h5>
+
+                                    <h5 className="font-Bitter  text-lg text-graydisable2">
+                                        55320520
+                                    </h5>
+                                </div>
+                            </div> */}
                         </div>
-                        <div className="mt-10">
-                            <Tabs>
-                                <TabList>
-                                    <Tab>
-                                        <h4 className="font-Bitter">
-                                            Emplyment Info
-                                        </h4>
-                                    </Tab>
-                                    <Tab>
-                                        <h4 className="font-Bitter">Career</h4>
-                                    </Tab>
-                                    <Tab>
-                                        <h4 className="font-Bitter">
-                                            Competency
-                                        </h4>
-                                    </Tab>
-                                </TabList>
-                                <TabPanel>A</TabPanel>
-                                <TabPanel>A</TabPanel>
-                                <TabPanel>A</TabPanel>
-                            </Tabs>
+
+                        <div class="col-span-2  ml-3">
+                            <div className="my-2 ">
+                                {/* <h5 className="text-black font-Bitter text-lg font-bold">
+                                    {JSON.parse(inspector)[0].name}
+                                </h5> */}
+                                {/* 
+                                <h5 className="text-black  font-Bitter text-lg">
+                                    {JSON.parse(inspector)[0].position}
+                                </h5> */}
+                            </div>
+                            <div className="mt-10">
+                                <Tabs>
+                                    <TabList>
+                                        <Tab>
+                                            <h4 className="font-Bitter">
+                                                Info
+                                            </h4>
+                                        </Tab>
+                                        {/* <Tab>
+                                            <h4 className="font-Bitter">
+                                                Career
+                                            </h4>
+                                        </Tab>
+                                        <Tab>
+                                            <h4 className="font-Bitter">
+                                                Competency
+                                            </h4>
+                                        </Tab> */}
+                                    </TabList>
+                                    <TabPanel>
+                                        <h5 className="text-black font-Bitter text-lg font-bold">
+                                            {JSON.parse(inspector)[0].name}
+                                        </h5>
+
+                                        <h5 className="text-black  font-Bitter text-lg">
+                                            {JSON.parse(inspector)[0].position}
+                                        </h5>
+
+                                        <h5 className="mt-3  font-Bitter text-lg font-bold text-graydisable2">
+                                            Disipline
+                                        </h5>
+                                        <h5 className="text-black  font-Bitter text-lg">
+                                            {
+                                                JSON.parse(inspector)[0]
+                                                    .discipline
+                                            }
+                                        </h5>
+                                    </TabPanel>
+                                    {/* <TabPanel>A</TabPanel>
+                                    <TabPanel>A</TabPanel> */}
+                                </Tabs>
+                            </div>
                         </div>
                     </div>
                 </div>

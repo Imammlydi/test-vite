@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
-const BackButton = ({ href }) => {
+const BackButton = ({ href, onclick }) => {
     return (
-        <Link to={href}>
+        <Link to={href} onClick={onclick}>
             <svg
                 width="20"
                 height="20"

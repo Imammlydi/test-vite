@@ -147,7 +147,7 @@ const BottomNavbar = () => {
                                     Home
                                 </h5>
                             </Link>
-                            <Link to={"/report"} className="p-4">
+                            <Link to={"/report2"} className="p-4">
                                 <Report />
                                 <h5
                                     className={

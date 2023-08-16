@@ -22,8 +22,11 @@ export default function App() {
             <div className="relative">
                 {/* {location.pathname !== "/login"  && <Navbar />} */}
 
-                {location.pathname !== "/login" &&
-                location.pathname !== "/detail_report" ? (
+                {location.pathname !== "/login2" &&
+                location.pathname !== "/reportdetail2" &&
+                location.pathname !== "/gallery" &&
+                location.pathname !== "/detail_image" &&
+                location.pathname !== "/reportdetail3" ? (
                     // && width >= 768 && width >= 1024
                     <Navbar />
                 ) : null}

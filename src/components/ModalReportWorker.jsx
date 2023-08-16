@@ -8,10 +8,9 @@ const ModalReportWorker = () => {
 
     const initialFormState = {
         // id: "",
-        title: "",
-        description: "",
-        shift: "",
-        tanggal: "",
+        type_of_work: "",
+        qtyW: "",
+
         // image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     };
 
@@ -29,13 +28,16 @@ const ModalReportWorker = () => {
 
     const fetchCreateReport = async () => {
         try {
-            const response = await fetch(urlPostReport, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
+            const response = await fetch(
+                `http://localhost:5000/report/report/worker/${idReport}`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(data),
+                }
+            );
 
             const datas = await response.json();
             console.log(datas);
@@ -48,7 +50,7 @@ const ModalReportWorker = () => {
         // createItem(data);
         const newData = JSON.stringify(data);
         console.log("called", data);
-        fetchCreateReport(data);
+        // fetchCreateReport(data);
         // fetchCreateReport()
     };
 
@@ -105,6 +107,30 @@ const ModalReportWorker = () => {
             </div>
         );
     };
+    const Button4 = ({ title, onClick }) => {
+        return (
+            <div>
+                <button
+                    className="rounded border-none bg-blue1 px-4 py-2 text-xs font-bold text-white hover:bg-blue1"
+                    onClick={onClick}
+                >
+                    Send
+                </button>
+            </div>
+        );
+    };
+    const Button5 = ({ title, onClick }) => {
+        return (
+            <div>
+                <button
+                    className="rounded border border-none border-blue1 bg-white px-4 py-2 text-xs font-bold text-blue1 hover:bg-white"
+                    onClick={onClick}
+                >
+                    Cancel
+                </button>
+            </div>
+        );
+    };
 
     useEffect(() => {}, []);
 
@@ -130,40 +156,24 @@ const ModalReportWorker = () => {
                                 <input
                                     type="text"
                                     className="border-1 text-slate-50 focus:ring-sky-500 my-2 w-full  appearance-none rounded   border border-graydisable px-3     py-3 font-Bitter leading-tight focus:border-primary  focus:outline-none focus:ring-1 lg:max-w-5xl "
-                                    placeholder="title"
-                                    name="title"
-                                    value={data.title}
+                                    placeholder="type_of_work"
+                                    name="type_of_work"
+                                    value={data.type_of_work}
                                     onChange={handleInputChange}
                                 />
                                 <input
-                                    type="text"
+                                    type="number"
                                     className="border-1 text-slate-50 focus:ring-sky-500 my-2 w-full  appearance-none rounded   border border-graydisable px-3     py-3 font-Bitter leading-tight focus:border-primary  focus:outline-none focus:ring-1 lg:max-w-5xl "
-                                    placeholder="description"
-                                    name="description"
-                                    value={data.description}
-                                    onChange={handleInputChange}
-                                />
-                                <input
-                                    type="text"
-                                    className="border-1 text-slate-50 focus:ring-sky-500 my-2 w-full  appearance-none rounded   border border-graydisable px-3     py-3 font-Bitter leading-tight focus:border-primary  focus:outline-none focus:ring-1 lg:max-w-5xl "
-                                    placeholder="shift"
-                                    name="shift"
-                                    value={data.shift}
-                                    onChange={handleInputChange}
-                                />
-                                <input
-                                    type="date"
-                                    className="border-1 text-slate-50 focus:ring-sky-500 my-2 w-full  appearance-none rounded   border border-graydisable px-3     py-3 font-Bitter leading-tight focus:border-primary  focus:outline-none focus:ring-1 lg:max-w-5xl "
-                                    placeholder="tanggal"
-                                    name="tanggal"
-                                    value={data.tanggal}
+                                    placeholder="qtyW"
+                                    name="qtyW"
+                                    value={data.qtyW}
                                     onChange={handleInputChange}
                                 />
                             </form>
                         </div>
                         <div className="flex justify-end px-7 lg:px-2">
-                            <Button3 title={"Close"} onClick={closeModal} />
-                            <Button3
+                            <Button5 title={"Close"} onClick={closeModal} />
+                            <Button4
                                 title={"Create"}
                                 type="submit"
                                 onClick={sendData}
