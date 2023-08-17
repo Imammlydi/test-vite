@@ -132,7 +132,7 @@ const ReportList = () => {
                     className="bg-blue-500 hover:bg-blue-700 ml-8 border-primary py-2 px-2 font-Bitter  text-sm font-bold  text-primary"
                     onClick={toggleForm}
                 >
-                    {showForm ? "X" : "Tambah Laporan"}
+                    {showForm ? "X" : "Add Report"}
                 </button>
                 {showForm && (
                     <ReportForm
@@ -148,7 +148,7 @@ const ReportList = () => {
                 )}
             </div>
             <h2 className="mb-4 px-4 pt-8 font-Bitter  text-2xl font-bold  md:px-8 ">
-            Report List
+            My Report List
             </h2>
             <div className="container mx-auto grid grid-cols-1 gap-2 px-4 py-6 pt-8  md:px-8 lg:max-w-7xl  lg:grid-cols-4 ">
                 {/* <ReactLoading type={'spin'} color={'#000000'} height={50} width={50} /> */}

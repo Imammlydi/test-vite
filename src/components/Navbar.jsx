@@ -62,7 +62,7 @@ export default function Navbar() {
                         <div className="mt-32 flex-1 rounded-lg bg-white py-2 px-5">
                             <div className="my-2">
                                 {" "}
-                                <NavLinks href="/">Home</NavLinks>
+                                <NavLinks href="/">Dashboard</NavLinks>
                             </div>
                             <div className="my-2">
                                 {" "}

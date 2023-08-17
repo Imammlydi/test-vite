@@ -590,6 +590,7 @@ const ReportDetail2 = () => {
             .then((response) => {
                 console.log("Report updated successfully:", response.data);
                 setShowForm(false);
+                fetchReport()
                 // Lakukan aksi setelah pembaruan berhasil, misalnya redirect atau tampilkan notifikasi
             })
             .catch((error) => {
@@ -601,6 +602,22 @@ const ReportDetail2 = () => {
         setReloadChart(true); // Set reloadChart menjadi true saat data diperbarui di dalam komponen ChartDurasiKerja
     };
 
+    const fetchReport = async () => {
+        try {
+            // Ganti 'YOUR_BEARER_TOKEN' dengan bearer token yang valid
+            const token = "YOUR_BEARER_TOKEN";
+            const data = await getReportById(idReport, tokens);
+            console.log(data.data.inspector.discipline, "report");
+            console.log(data.data.id, "report--->***");
+            setReport(data.data);
+            setReports(data.data);
+            setLoading(false);
+        } catch (error) {
+            console.error("Error fetching report:", error);
+            setLoading(true);
+        }
+        console.log(tokens, idReport);
+    };
     useEffect(() => {
         // if (reloadChart) {
         //     setReloadChart(false); // Set reloadChart kembali ke false untuk menghindari pembaruan berulang
@@ -611,22 +628,6 @@ const ReportDetail2 = () => {
         fetchKendala();
         fetchWeatherData();
 
-        const fetchReport = async () => {
-            try {
-                // Ganti 'YOUR_BEARER_TOKEN' dengan bearer token yang valid
-                const token = "YOUR_BEARER_TOKEN";
-                const data = await getReportById(idReport, tokens);
-                console.log(data.data.inspector.discipline, "report");
-                console.log(data.data.id, "report--->***");
-                setReport(data.data);
-                setReports(data.data);
-                setLoading(false);
-            } catch (error) {
-                console.error("Error fetching report:", error);
-                setLoading(true);
-            }
-            console.log(tokens, idReport);
-        };
 
         fetchReport();
     }, [id, reloadChart]);
@@ -676,14 +677,14 @@ const ReportDetail2 = () => {
 
             <div className="mx-auto grid grid-cols-1 gap-4 px-4 pt-5 md:grid-cols-2 md:px-8 lg:max-w-7xl lg:grid-cols-2 lg:gap-10">
                 <div>
-                    <PDFDownloadLink
+                    {/* <PDFDownloadLink
                         document={<PDFPreview datax={data} data={reports} />}
                         fileName={`${tanggalSekarangs}report.pdf`}
                     >
                         {({ blob, url, loading, error }) =>
                             loading ? "Loading document..." : "Download PDF"
                         }
-                    </PDFDownloadLink>
+                    </PDFDownloadLink> */}
                     {loading ? (
                         <ReactLoading
                             type={"spin"}
@@ -762,13 +763,13 @@ const ReportDetail2 = () => {
                                                     }
                                                 >
                                                     <option value="">
-                                                        Pilih Shift
+                                                    Select Shift
                                                     </option>
-                                                    <option value="Siang">
-                                                        Siang
+                                                    <option value="day shift">
+                                                        Day Shift
                                                     </option>
-                                                    <option value="Malam">
-                                                        Malam
+                                                    <option value="night shift">
+                                                        Night Shift
                                                     </option>
                                                 </select>
                                             </div>
@@ -814,7 +815,7 @@ const ReportDetail2 = () => {
                                                     }
                                                 >
                                                     <option value="">
-                                                        Pilih Area
+                                                        Select Area
                                                     </option>
                                                     <option value="Regulating Dam">
                                                         Regulating Dam
@@ -828,7 +829,7 @@ const ReportDetail2 = () => {
                                                 </select>
                                             </div>
                                             <button
-                                                className="bg-blue-500 hover:bg-blue-700 rounded-md py-2 px-4 font-semibold text-white"
+                                                className="bg-blue-500 hover:bg-blue-700 rounded-md py-2 px-4 font-semibold text-primary font-Bitter"
                                                 onClick={handleUpdateReport}
                                             >
                                                 Update Report
@@ -841,7 +842,7 @@ const ReportDetail2 = () => {
                                                 {report.status.toLocaleUpperCase()}
                                                 ]
                                             </h2>
-                                            <h1 className="mb-4 font-Bitter text-2xl font-bold">
+                                            <h1 className="mb-4 font-Bitter text-xl font-bold">
                                                 {report.title}{" "}
                                             </h1>
                                             <p className="mb-2  font-Bitter">
@@ -862,18 +863,18 @@ const ReportDetail2 = () => {
                                                 </span>{" "}
                                                 {report.date}
                                             </p>
-                                            <p className="mb-2">
+                                            {/* <p className="mb-2">
                                                 <span className="font-Bitter font-semibold">
                                                     Inspector ID:
                                                 </span>{" "}
                                                 {report.id}
-                                            </p>
+                                            </p> */}
                                         </div>
                                     )}
                                 </div>
                             </div>
-                            <div className="my-2 rounded-md border p-2 font-Bitter">
-                                <h2 className="mb-4 text-xl font-semibold">
+                            {/* <div className="my-2 rounded-md border p-2 font-Bitter">
+                                <h2 className="mb-4 text-md font-semibold">
                                     Weather Data
                                 </h2>
                                 <ul>
@@ -900,7 +901,7 @@ const ReportDetail2 = () => {
                                 tokens={tokens}
                                 durasikerja={pekerja}
                             />
-                            {/* <KendalaChart data={kendala}/> */}
+                           
                             <div className="py-4">
                                 <div>
                                    
@@ -937,7 +938,7 @@ const ReportDetail2 = () => {
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
+                            </div> */}
                         </>
                     )}
 

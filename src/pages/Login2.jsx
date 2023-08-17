@@ -98,8 +98,8 @@ const Login2 = () => {
 </svg>
 
             <div className="w-full max-w-sm rounded-md bg-white mt-6 p-6 shadow-lg">
-                <h1 className="mb-4 text-center text-2xl font-bold text-white">
-                    Login
+                <h1 className="mb-4 text-center text-2xl font-Bitter font-bold text-primary">
+                    Login Inspector
                 </h1>
                 <input
                     type="email"
@@ -116,7 +116,7 @@ const Login2 = () => {
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <button
-                    className="bg-white hover:bg-blue-800 rounded py-2 px-4 font-bold text-primary"
+                    className="bg-white hover:bg-blue-800 font-Bitter rounded py-2 px-4 font-bold text-primary"
                     onClick={handleLogin}
                 >
                     Login
